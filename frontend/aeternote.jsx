@@ -4,7 +4,13 @@ import configureStore from './store/store.js';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store;
+  if (window.currentUser){
+    store = configureStore({ session: { currentUser: window.currentUser } });
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
   const root = document.getElementById('root');
 
   window.getState = store.getState; // testing
