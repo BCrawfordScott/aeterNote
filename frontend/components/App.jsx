@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionLinks from './session/session_links';
 import SessionForm from './session/session_form_container';
+import { AuthRoute } from '../util/route_util.jsx';
 import {
   Route,
   Link,
@@ -13,8 +14,8 @@ const App = () => (
     <div>
       <h1>æterNote</h1>
       <Route exact path='/' component={ SessionLinks } />
-      <Route path='/login' component={ SessionForm } />
-      <Route path='/signup' component={ SessionForm } />
+      <AuthRoute path='/login' component={ SessionForm } />
+      <AuthRoute path='/signup' component={ SessionForm } />
     </div>
   );
 
