@@ -12,9 +12,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-componentDidMount() {
-  console.log(this.props);
-}
+  
 
   componentWillReceiveProps(newProps) {
    if(newProps.loggedIn) {

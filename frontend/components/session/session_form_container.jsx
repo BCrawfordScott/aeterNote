@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { login, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return({
@@ -9,8 +10,9 @@ const mapStateToProps = (state, ownProps) => {
   });
 };
 
-const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
+const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(ownProps);
+  const formType = ownProps.location;
   const processForm = (formType === 'login') ? login : signup;
   return ({
     processForm: user => dispatch(processForm(user)),
@@ -18,7 +20,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   });
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(SessionForm));
