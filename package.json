@@ -16,6 +16,11 @@
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
   }
 }
