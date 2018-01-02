@@ -7,9 +7,9 @@ const HomePage = () => {
     <main>
       <TopNav />
       <p>This is where all the ad text will go!</p>
+      <SessionForm />  
     </main>
   );
 };
-//<SessionForm />  Debug!!!!!
 
 export default HomePage;
