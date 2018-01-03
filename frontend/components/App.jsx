@@ -14,8 +14,8 @@ import {
 
 const App = () => (
     <div>
-      <Route exact path='/' component={ HomePage } />
       <ProtectedRoute path='/notes' component={ NoteHome } />
+      <AuthRoute exact path='/' component={ HomePage } />
       <AuthRoute path='/login' component={ SessionForm } />
       <AuthRoute path='/signup' component={ SessionForm } />
     </div>

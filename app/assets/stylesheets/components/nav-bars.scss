@@ -1,20 +1,24 @@
 .top-nav {
   display: flex;
+  height: 90px;
   width: 100%;
   justify-content: space-between;
+  border-bottom: 1px solid #eee;
 
   .logo {
     display: flex;
     margin-left: 5%;
     img {
+
+      display: inline;
       height: 45px;
       width: 60px;
-      align: left;
-      padding: 5px;
+      vertical-align: middle;
+      padding: 22.5px 5px 5px 5px;
     }
     h3 {
       display: inline;
-      font-family: 'Roboto Slab', serif;
+      font-family: $serif;
       align-self: center;
       font-size: 21px;
       color: $EvernoteGreen;
@@ -22,7 +26,22 @@
   }
 
   .login-signup {
-    align-items: right;
+    display: flex;
+    margin-right: 5%;
+    a {
+      display: inline;
+      font-family: $sans-serif;
+      align-self: center;
+      font-size: 15px;
+      color: $EvernoteDarkGray;
+      #login{
+
+      }
+    }
   }
 
+}
+
+#signup {
+  padding: 15px;
 }

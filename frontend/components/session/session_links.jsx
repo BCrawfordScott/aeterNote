@@ -1,15 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { login } from '../../actions/session_actions';
 
+class SessionLinks extends React.Component {
+  constructor(props) {
 
-const SessionLinks = () => {
-  return(
-    <nav className='login-signup'>
-      <Link to='/login'>Login</Link>
-      &nbsp; or &nbsp;
-      <Link to='/signup'>Sign Up</Link>
-    </nav>
-  );
+    super(props);
+  }
+
+  render(){
+    return(
+      <nav className='login-signup'>
+        <Link id='login' to='/login'>Login</Link>
+
+        <Link id='signup' to='/signup'>Sign Up</Link>
+        <button onClick={this.props.demoLogin} > Demo Login </button>
+      </nav>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  const demo = {email: 'pt@barnum.com', password: 'circus'};
+  return {
+    demoLogin: () => dispatch(login(demo))
+  };
 };
 
-export default SessionLinks;
+
+
+export default connect(null, mapDispatchToProps)(SessionLinks);

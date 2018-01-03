@@ -6,8 +6,13 @@ const HomePage = () => {
   return (
     <main>
       <TopNav />
-      <p>This is where all the ad text will go!</p>
-      <SessionForm />  
+      <div className='description'>
+        <h3>Never Forget A Million Dollar Idea Again</h3>
+        <p>Record and organize all your thoughts,
+          notes, and ideas in one easy to manage
+          place with æterNote.</p>
+        <SessionForm />
+      </div>
     </main>
   );
 };
