@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div className='homepage'>
       <TopNav />
-      <main>
+      <main className='home-body'>
         <div className='description'>
           <h3>Never Forget A Million Dollar Idea Again</h3>
           <p>Record and organize all your thoughts,

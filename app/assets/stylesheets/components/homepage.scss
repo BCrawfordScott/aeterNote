@@ -1,4 +1,4 @@
-main {
+.home-body {
   display: flex;
   justify-content: space-around;
 }
@@ -10,7 +10,7 @@ main {
   margin: auto;
   border-right: 1px solid $EvernoteMediumLightGray;
   margin-top: 45px;
-  padding-right: 45px;
+  padding-right: 55px;
 
   h3 {
     font-family: $sans-serif;
