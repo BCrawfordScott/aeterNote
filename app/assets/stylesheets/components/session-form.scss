@@ -1,0 +1,23 @@
+.session-form {
+  display: flex;
+  flex-direction: column;
+  font-family: $sans-serif;
+  padding-right: 25px;
+  h3 {
+    text-align: center;
+  }
+  .session-inputs {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: 300px;
+      border: 1px solid $EvernoteMediumGray;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 5px;
+      background-color: $EvernoteSuperLightGray
+    }
+
+  }
+}

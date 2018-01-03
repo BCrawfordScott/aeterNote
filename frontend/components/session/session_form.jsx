@@ -29,23 +29,16 @@ class SessionForm extends React.Component {
     return e => this.setState({[field]: e.target.value});
   }
 
-  // emailFocus(e) {
-  //   (e.target.value === 'Email') ? e.target.value = '' : e.target.value = this.state.value;
-  // }
-  //
-  // emailBlur(e) {
-  //   (e.target.value === '') ? e.target.value = 'Emial' : e.target.value = this.state.value;
-  // }
 
   render() {
     return(
       <div className='session-form'>
         <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
+        <form className='session-inputs' onSubmit={this.handleSubmit}>
           <ul className='errors'>
             {
               this.props.errors.map((error, i) => (
-                <li ket={i}>{error}</li>
+                <li key={i}>{error}</li>
               ))
             }
           </ul>
@@ -62,7 +55,7 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')}/>
 
-            <input
+            <input id='submit'
               type='submit'
               value={`${this.props.formType}`}/>
         </form>
