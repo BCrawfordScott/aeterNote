@@ -127,3 +127,31 @@
   }
 
 }
+
+.side-nav {
+  background-color: $EvernoteSuperLightGray;
+  width: 85px;
+
+  button {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .logout-button {
+    width: 57px;
+    padding: 8px 12px;
+    font-family: $sans-serif;
+    align-self: center;
+    font-size: 15px;
+    color: $EvernoteDarkGray;
+    border: 2px solid $EvernoteMediumLightGray;
+    text-align: center;
+
+  }
+
+  .logout-button:hover{
+    color: #fff;
+    background-color: $EvernoteGreen;
+    border-color: $EvernoteGreen;
+  }
+}
