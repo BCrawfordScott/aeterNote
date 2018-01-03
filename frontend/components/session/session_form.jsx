@@ -10,10 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    console.log(this.props);
+    // this.emailFocus = this.emailFocus.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -32,6 +29,13 @@ class SessionForm extends React.Component {
     return e => this.setState({[field]: e.target.value});
   }
 
+  // emailFocus(e) {
+  //   (e.target.value === 'Email') ? e.target.value = '' : e.target.value = this.state.value;
+  // }
+  //
+  // emailBlur(e) {
+  //   (e.target.value === '') ? e.target.value = 'Emial' : e.target.value = this.state.value;
+  // }
 
   render() {
     return(
@@ -45,19 +49,22 @@ class SessionForm extends React.Component {
               ))
             }
           </ul>
-          <label>Email:
             <input
+              className="email"
               type='text'
-              value={this.state.username}
+              placeholder="Email"
+              value={this.state.email}
               onChange={this.update('email')}/>
-          </label>
-          <label>Password:
             <input
+              className="password"
               type='password'
+              placeholder="Password"
               value={this.state.password}
               onChange={this.update('password')}/>
-          </label>
-          <input type='submit' value={`${this.props.formType}`}/>
+
+            <input
+              type='submit'
+              value={`${this.props.formType}`}/>
         </form>
       </div>
     );
