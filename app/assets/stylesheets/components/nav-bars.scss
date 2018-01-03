@@ -34,14 +34,27 @@
       align-self: center;
       font-size: 15px;
       color: $EvernoteDarkGray;
-      #login{
-
-      }
+    }
+    button {
+      padding: 10px;
+      display: inline;
+      font-family: $sans-serif;
+      align-self: center;
+      font-size: 15px;
+      color: $EvernoteDarkGray;
+      margin: 10px;
+      border: 2px solid $EvernoteMediumLightGray;
+      border-radius: 5px;
+    }
+    button:hover {
+      color: #fff;
+      background-color: $EvernoteGreen;
+      border-color: $EvernoteGreen;
     }
   }
 
 }
 
-#signup {
-  padding: 15px;
+#login{
+
 }

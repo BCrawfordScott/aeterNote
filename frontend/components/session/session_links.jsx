@@ -13,8 +13,6 @@ class SessionLinks extends React.Component {
     return(
       <nav className='login-signup'>
         <Link id='login' to='/login'>Login</Link>
-
-        <Link id='signup' to='/signup'>Sign Up</Link>
         <button onClick={this.props.demoLogin} > Demo Login </button>
       </nav>
     );
