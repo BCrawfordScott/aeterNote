@@ -1,24 +1,34 @@
 .top-nav {
-  display: flex;
+
   height: 90px;
   width: 100%;
-  justify-content: space-between;
   border-bottom: 1px solid #eee;
   position: fixed;
   background-color: #fff;
 
-  .logo {
+  .nav-elements{
+    margin: auto;
+    align-self: center;
     display: flex;
-    margin-left: 5%;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1120px;
+
+  }
+
+  .logo {
+    margin-left: 40px;
+    display: flex;
     img {
 
       display: inline;
       height: 45px;
       width: 60px;
       vertical-align: middle;
-      padding: 22.5px 5px 5px 5px;
+      padding: 22.5px 5px 5px 0px;
     }
     h3 {
+      vertical-align: middle;
       display: inline;
       font-family: $serif;
       align-self: center;
@@ -29,7 +39,7 @@
 
   .login-signup {
     display: flex;
-    margin-right: 5%;
+    margin-right: 40px;
     a {
       display: inline;
       font-family: $sans-serif;
@@ -38,7 +48,7 @@
       color: $EvernoteDarkGray;
     }
     button {
-      padding: 10px;
+      padding: 10px 15px;
       display: inline;
       font-family: $sans-serif;
       align-self: center;
@@ -47,6 +57,9 @@
       margin: 10px;
       border: 2px solid $EvernoteMediumLightGray;
       border-radius: 5px;
+      // transition: background-color 0.5s ease;
+      // transition: color 0.5s ease;
+      // transition: border-color 0.5s ease;
     }
     button:hover {
       color: #fff;
