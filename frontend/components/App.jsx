@@ -14,7 +14,6 @@ import {
 
 const App = () => (
     <div>
-      <h1>æterNote</h1>
       <Route exact path='/' component={ HomePage } />
       <ProtectedRoute path='/notes' component={ NoteHome } />
       <AuthRoute path='/login' component={ SessionForm } />

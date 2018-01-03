@@ -1,0 +1,28 @@
+.top-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .logo {
+    display: flex;
+    margin-left: 5%;
+    img {
+      height: 45px;
+      width: 60px;
+      align: left;
+      padding: 5px;
+    }
+    h3 {
+      display: inline;
+      font-family: 'Roboto Slab', serif;
+      align-self: center;
+      font-size: 21px;
+      color: $EvernoteGreen;
+    }
+  }
+
+  .login-signup {
+    align-items: right;
+  }
+
+}
