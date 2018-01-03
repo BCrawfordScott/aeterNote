@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     height: 100%;
-    max-width: 1120px;
+    max-width: 1200px;
 
   }
 
@@ -57,9 +57,7 @@
       margin: 10px;
       border: 2px solid $EvernoteMediumLightGray;
       border-radius: 5px;
-      // transition: background-color 0.5s ease;
-      // transition: color 0.5s ease;
-      // transition: border-color 0.5s ease;
+
     }
     button:hover {
       color: #fff;
@@ -70,6 +68,62 @@
 
 }
 
-#login{
+.foot-nav {
+  position: fixed;
+  bottom: 0px;
+  height: 90px;
+  width: 100%;
+  border-top: 1px solid #eee;
+  position: fixed;
+  background-color: #fff;
+  padding-bottom: 40px;
+
+  .foot-nav-elements{
+    margin: auto;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1200px;
+
+    .quotes, .external-links {
+      display: flex;
+    }
+
+    .quotes {
+      margin-right: 40px;
+    }
+
+    .external-links {
+      margin-left: 40px;
+    }
+
+    a {
+      vertical-align: middle;
+      display: inline;
+      font-family: $serif;
+      align-self: center;
+      font-size: 18px;
+      color: $EvernoteGreen;
+      padding: 5px
+    }
+
+    p {
+      vertical-align: middle;
+      display: inline;
+      color: $EvernoteDarkGray;
+      padding: 5px;
+      align-self: center;
+      font-size: 18px;
+    }
+
+    .fake-quote {
+      font-family: $serif;
+    }
+    .translation {
+      font-family: $sans-serif;
+    }
+
+  }
 
 }

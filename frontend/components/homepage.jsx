@@ -1,5 +1,6 @@
 import React from 'react';
 import TopNav from './navbars/top_nav';
+import FooterNav from './navbars/footer_nav';
 import SessionForm from './session/session_form_container';
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
         </div>
         <SessionForm />
       </main>
+      <FooterNav />
     </div>
   );
 };
