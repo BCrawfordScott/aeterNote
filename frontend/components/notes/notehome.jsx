@@ -7,8 +7,10 @@ const NoteHome = () => {
       <SideNav />
       <div className='under-construction'>
         <img  src={window.staticImages.logoMain} />
-        <article>Thanks for stoping by!
-          Check back soon for more elephantastic-features!</article>
+        <article>
+          <p>Tibi gratias ago pro cum stetissent iuxta!</p>
+          <p>-Thanks for stopping by!</p>
+          <p>Check back soon for more elephantastic-features!</p></article>
       </div>
     </main>
   );
