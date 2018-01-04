@@ -47,8 +47,4 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.urlsafe_base64
   end
 
-  def owns_notebook?(notebook)
-    user.id == notebook.user_id
-  end
-
 end

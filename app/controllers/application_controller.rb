@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def login(user)
     user.reset_session_token
-    session[:session_token] = user.session_token 
+    session[:session_token] = user.session_token
     @current_user = user
   end
 
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def require_logged_in
     unless current_user
-      render json: ['Invalid Credentials'], status: 401
+      render json: ['Invalid credentials: log in to continue'], status: 401
     end
   end
 end

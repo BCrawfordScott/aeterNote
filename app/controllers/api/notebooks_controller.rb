@@ -22,7 +22,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def update
-    @notebook = Notebook.find_by(id: params[:id])
+    @notebook = Notebook.find(params[:id])
     if @notebook.update(notebook_params)
       render :show
     else
@@ -31,7 +31,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = Notebook.find_by(id: params[:id])
+    @notebook = Notebook.find(params[:id])
     @track.destroy
     render :index
   end
@@ -39,12 +39,16 @@ class Api::NotebooksController < ApplicationController
   private
 
   def notebook_params
-   params.require(:notebook).permit(:title)
+    params.require(:notebook).permit(:title)
+  end
+
+  def owns_notebook?(notebook)
+    current_user.id == notebook.user_id
   end
 
   def proper_ownership
-   unless current_user.owns_notebook?(Notebook.find_by(id: params[:id]))
-     return render json: ['Permission denied: you do not own these notebooks'], status: 401
-   end
+    unless owns_notebook?(Notebook.find(params[:id]))
+      render json: ['Permission denied: you do not own these notebooks'], status: 401
+    end
   end
 end
