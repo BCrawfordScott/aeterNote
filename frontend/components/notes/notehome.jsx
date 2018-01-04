@@ -1,10 +1,12 @@
 import React from 'react';
 import SideNav from '../navbars/side_nav_container';
+import Notebooks from '../notebooks/notebooks_index_container';
 
 const NoteHome = () => {
   return(
     <main className='notes-main'>
       <SideNav />
+      <Notebooks />
       <div className='under-construction'>
         <img  src={window.staticImages.logoMain} />
         <article>
