@@ -15,13 +15,39 @@
     flex-direction: column;
     margin: auto;
 
+    .errors {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin: auto;
+        text-align: center;
+        color: $EvernoteErrorRed;
+        width: 300px;
+        background-color: $EvernoteErrorPink;
+        padding: 0px 15px 10px 15px;
+        border-left: 1px solid $EvernoteErrorRed;
+        border-right: 1px solid $EvernoteErrorRed;
+      }
+
+      li:first-of-type {
+        padding-top: 10px;
+        border-top: 1px solid $EvernoteErrorRed;
+      }
+
+      li:last-of-type {
+        border-bottom: 1px solid $EvernoteErrorRed;
+      }
+
+    }
+
     input {
       width: 300px;
       border: 1px solid $EvernoteMediumGray;
       padding: 15px;
       margin: 10px;
       border-radius: 5px;
-      background-color: $EvernoteSuperLightGray
+      background-color: $EvernoteInputBlue;
     }
 
     input:last-of-type {

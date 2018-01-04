@@ -12,16 +12,18 @@ class SoloLogin extends React.Component {
   render() {
 
     return(
-      <div className='solo-session'>
-        <img  src={window.staticImages.logoMain} />
-        <p className='greeting'>Welcome back to æterNote</p>
-        <div className='solo-session-template'>
-          <SessionForm />
-          <p>or</p>
-          <button onClick={this.props.demoLogin}> Demo Login </button>
+      <div className='solo-session-bg'>
+        <div className='solo-session'>
+          <img  src={window.staticImages.logoMain} />
+          <p className='greeting'>Welcome back to æterNote</p>
+          <div className='solo-session-template'>
+            <SessionForm />
+            <p>or</p>
+            <button onClick={this.props.demoLogin}> Demo Login </button>
+          </div>
+          <p>New to æterNote?</p>
+          <Link to='/signup'>Sign Up</Link>
         </div>
-        <p>New to æterNote?</p>
-        <Link to='/signup'>Sign Up</Link>
       </div>
     );
   }
