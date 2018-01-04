@@ -33,8 +33,7 @@ class Api::NotebooksController < ApplicationController
   def destroy
     @notebook = Notebook.find(params[:id])
     @notebook.destroy
-    @notebooks = Notebook.where(user_id: current_user.id)
-    render :index
+    render :show
   end
 
   private
