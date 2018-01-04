@@ -1,7 +1,7 @@
 class Api::NotebooksController < ApplicationController
 
   before_action :require_logged_in
-  before_action :proper_ownership, except: [ :index ]
+  before_action :proper_ownership, except: [ :index, :create ]
 
   def index
     @notebooks = Notebook.where(user_id: current_user.id)
@@ -32,7 +32,8 @@ class Api::NotebooksController < ApplicationController
 
   def destroy
     @notebook = Notebook.find(params[:id])
-    @track.destroy
+    @notebook.destroy
+    @notebooks = Notebook.where(user_id: current_user.id)
     render :index
   end
 
