@@ -1,5 +1,5 @@
 import { RECEIVE_NOTEBOOK_ERRORS,
-  REMOVE_ERRORS,
+  REMOVE_NOTEBOOK_ERRORS,
   RECEIVE_NOTEBOOKS,
   RECEIVE_NOTEBOOK,
   REMOVE_NOTEBOOK
@@ -10,7 +10,11 @@ const notebookErrorsReducer = (state = [], action) => {
   switch(action.type){
     case(RECEIVE_NOTEBOOK_ERRORS):
       return action.errors;
-    case(RECEIVE_NOTEBOOK, RECEIVE_NOTEBOOKS, REMOVE_NOTEBOOK, REMOVE_ERRORS):
+    case(
+      RECEIVE_NOTEBOOK,
+      RECEIVE_NOTEBOOKS,
+      REMOVE_NOTEBOOK,
+      REMOVE_NOTEBOOK_ERRORS):
       return [];
     default:
       return state;

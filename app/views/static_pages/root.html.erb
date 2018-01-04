@@ -5,6 +5,12 @@
      user: current_user
      ).html_safe %>
   <% end %>
+  <% if !!current_user %>
+     window.notebooks = <%= render(
+        'api/notebooks/notebooks.json.jbuilder',
+        notebooks: current_user.notebooks
+      ).html_safe %>
+  <% end %>
   window.staticImages = {
     logoMain: '<%= asset_url("æterNote_logo_lightbulb.png") %>'
   }

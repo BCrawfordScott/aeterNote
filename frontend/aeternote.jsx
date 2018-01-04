@@ -14,13 +14,18 @@ window.fetchNotebooks = NotebookActions.fetchNotebooks;
 window.createNotebook = NotebookActions.createNotebook;
 window.updateNotebook = NotebookActions.updateNotebook;
 window.deleteNotebook = NotebookActions.deleteNotebook;
+import { logout } from './actions/session_actions';
 //TESTING//
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser){
-    store = configureStore({ session: { currentUser: window.currentUser } });
+    store = configureStore({
+      session: { currentUser: window.currentUser },
+      notebooks: window.notebooks
+    });
     delete window.currentUser;
+    delete window.notebooks;
   } else {
     store = configureStore();
   }

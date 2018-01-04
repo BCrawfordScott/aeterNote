@@ -2,11 +2,14 @@ import * as APIUtil from '.././util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECIEVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-export const REMOVE_ERRORS = 'REMOVE_ERRORS';
+export const REMOVE_SESSION_ERRORS = 'REMOVE_ERRORS';
 
 const receiveCurrentUser = (currentUser) => {
+
   return {
     type: RECEIVE_CURRENT_USER,
+    // currentUser: data.currentUser,
+    // notebooks: data.notebooks
     currentUser
   };
 };
@@ -20,7 +23,7 @@ const receiveErrors = (errors) => {
 
 export const removeSessionErrors = () => {
   return {
-    type: REMOVE_ERRORS
+    type: REMOVE_SESSION_ERRORS
   };
 };
 
