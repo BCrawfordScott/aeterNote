@@ -1,7 +1,7 @@
 import React from 'react';
 import SessionForm from '../session/session_form_container';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/session_actions';
+import { login, removeSessionErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
 class SoloLogin extends React.Component {
@@ -9,6 +9,11 @@ class SoloLogin extends React.Component {
 
     super(props);
   }
+
+  componentWillUnmount() {
+    this.props.removeErrors();
+  }
+  
   render() {
 
     return(
@@ -32,7 +37,8 @@ class SoloLogin extends React.Component {
 const mapDispatchToProps = dispatch => {
   const demo = {email: 'pt@barnum.com', password: 'circus'};
   return {
-    demoLogin: () => dispatch(login(demo))
+    demoLogin: () => dispatch(login(demo)),
+    removeErrors: () => dispatch(removeSessionErrors())
   };
 };
 

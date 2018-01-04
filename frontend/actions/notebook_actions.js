@@ -4,6 +4,7 @@ export const RECEIVE_NOTEBOOKS = 'RECEIVE_NOTEBOOKS';
 export const RECEIVE_NOTEBOOK = 'RECEIVE_NOTEBOOK';
 export const REMOVE_NOTEBOOK = 'REMOVE_NOTEBOOK';
 export const RECEIVE_NOTEBOOK_ERRORS = 'RECEIVE_NOTEBOOK_ERRORS';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
 const receiveNotebooks = notebooks => {
   return {
@@ -30,6 +31,12 @@ const receiveNotebookErrors = errors => {
   return {
     type: RECEIVE_NOTEBOOK_ERRORS,
     errors
+  };
+};
+
+export const removeNotebookErrors = () => {
+  return {
+    type: REMOVE_ERRORS
   };
 };
 

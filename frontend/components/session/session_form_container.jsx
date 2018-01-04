@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { login, signup } from '../../actions/session_actions';
+import {
+  login,
+  signup,
+  removeSessionErrors
+} from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
@@ -14,6 +18,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   const formType = (location.pathname.slice(1) === 'login') ? 'Login': 'Sign Up';
   const processForm = (formType === 'Login') ? login : signup;
   return ({
+    removeErrors: () => dispatch(removeSessionErrors()),
     processForm: user => dispatch(processForm(user)),
     formType
   });
