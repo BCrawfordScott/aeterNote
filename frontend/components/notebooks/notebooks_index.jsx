@@ -11,8 +11,9 @@ class NotebookIndex extends React.Component {
 
   render(){
     const { notebooks } = this.props;
+    const { reveal } = this.props;
     return(
-      <div className='notebooks'>
+      <div className={`notebooks ${reveal}`}>
         <header>
           <h3>NOTEBOOKS</h3>
           <button><img src={window.staticImages.notebookPlus}/></button>

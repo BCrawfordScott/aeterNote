@@ -6,9 +6,11 @@ class SideNav extends React.Component {
     return(
       <nav className='side-nav'>
         <div className='note-buttons'>
-          <button className='notebooks-button'>
+          <button
+            className='notebooks-button'
+            onClick={() => this.props.updateNotebookTab()}>
             <img src={window.staticImages.notebookIcon}/>
-            </button>
+          </button>
         </div>
 
         <button className='logout-button' onClick={() => this.props.logout()}>Logout</button>
