@@ -6,6 +6,7 @@ import {
   updateNotebook,
   deleteNotebook
 } from '../../actions/notebook_actions';
+import { updateNotebookFormModal } from '../../actions/ui_actions';
 import NotebookIndex from './notebooks_index';
 import { withRouter } from 'react-router-dom';
 
@@ -19,7 +20,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchNotebooks: () => dispatch(fetchNotebooks())
+    fetchNotebooks: () => dispatch(fetchNotebooks()),
+    updateNotebookFormModal: () => dispatch(updateNotebookFormModal())
   };
 };
 
