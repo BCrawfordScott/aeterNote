@@ -3,17 +3,32 @@
   width: 457px;
   border-right: 3px solid $EvernoteMediumLightGray;
 
-  h3 {
+  header {
+    display: flex;
+    justify-content: space-between;
     box-sizing: border-box;
-    padding: 17px 24px 0px;
-    height: 122px;
-    margin: 0;
-    font-size: 21px;
-    font-family: $sans-serif;
-    font-weight: 300;
-    color: $EvernoteElephantGray;
-    letter-spacing: 3px;
+    padding-top: 17px;
+    display: flex;
     border-bottom: 1px solid $EvernoteMediumLightGray;
+    h3 {
+      box-sizing: border-box;
+      padding: 0px 24px 0px;
+      height: 106px;
+      margin: 0;
+      font-size: 21px;
+      font-family: $sans-serif;
+      font-weight: 300;
+      color: $EvernoteElephantGray;
+      letter-spacing: 3px;
+    }
+    button {
+      margin-right: 24px;
+      height: 25px;
+      width: 25px;
+      img {
+      }
+    }
+
   }
 
 
@@ -30,12 +45,21 @@
 
   h5{
     margin: 0;
-    padding: 10px 20px;
+    padding: 10px 20px 0 20px;
     font-family: $serif;
     font-size: 16px;
     color: black;
     font-weight: 200;
     letter-spacing: 0.5px;
+  }
+
+  p {
+    letter-spacing: 0.75px;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: $sans-serif;
+    color: $EvernoteMediumDarkGray;
+    margin: 5px 20px;
   }
 
   .bottom-border {

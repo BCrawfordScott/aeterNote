@@ -133,13 +133,24 @@
   background-color: $EvernoteSuperLightGray;
   width: 70px;
   border-right: 1px solid $EvernoteMediumLightGray;
+  display: flex;
+  flex-direction: column;
 
-  button {
-    position: absolute;
-    bottom: 0px;
+  .notebooks-button {
+    height: 60px;
+    width: 60px;
+    display: flex;
+
+
+    img {
+      margin-left: 5px;
+
+    }
   }
 
   .logout-button {
+    position: absolute;
+    bottom: 0px;
     width: inherit;
     padding: 8px 0px;
     font-family: $sans-serif;
@@ -148,6 +159,7 @@
     color: $EvernoteDarkGray;
     border-top: 2px solid $EvernoteMediumLightGray;
     text-align: center;
+    margin: auto;
 
   }
 
