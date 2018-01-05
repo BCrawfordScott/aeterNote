@@ -13,14 +13,16 @@ class NotebookIndex extends React.Component {
     const { notebooks } = this.props;
     const { reveal } = this.props;
     return(
-      <div className={`notebooks ${reveal}`}>
-        <header>
-          <h3>NOTEBOOKS</h3>
-          <button><img src={window.staticImages.notebookPlus}/></button>
-        </header>
-        <ul>
-          {notebooks.map(notebook => <NotebookIndexItem key={notebook.id} title={notebook.title} />)}
-        </ul>
+      <div className={`modal ${reveal}`}>
+        <div className='notebooks'>
+          <header>
+            <h3>NOTEBOOKS</h3>
+            <button><img src={window.staticImages.notebookPlus}/></button>
+          </header>
+          <ul>
+            {notebooks.map(notebook => <NotebookIndexItem key={notebook.id} title={notebook.title} />)}
+          </ul>
+        </div>
       </div>
     );
   }

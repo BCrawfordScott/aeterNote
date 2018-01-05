@@ -2,10 +2,24 @@
   display: none;
 }
 
+.modal {
+  position: absolute;
+  float: left;
+  z-index: 9;
+  width: 80%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.80);
+}
+
 .notebooks {
+  min-height: 100vh;
+  position:absolute;
+  float: left;
+  z-index: 10;
   flex: none;
   width: 457px;
   border-right: 3px solid $EvernoteMediumLightGray;
+  background-color: #fff;
 
   header {
     display: flex;

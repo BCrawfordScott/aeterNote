@@ -6,13 +6,15 @@ const NoteHome = () => {
   return(
     <main className='notes-main'>
       <SideNav />
-      <Notebooks />
-      <div className='under-construction'>
-        <img  src={window.staticImages.logoMain} />
-        <article>
-          <p>Tibi gratias ago pro cum stetissent iuxta!</p>
-          <p>-Thanks for stopping by!</p>
-          <p>Check back soon for more elephantastic-features!</p></article>
+      <div className='note-box'>
+        <Notebooks />
+        <div className='under-construction'>
+          <img className='logo' src={window.staticImages.logoMain} />
+          <article>
+            <p>Tibi gratias ago pro cum stetissent iuxta!</p>
+            <p>-Thanks for stopping by!</p>
+            <p>Check back soon for more elephantastic-features!</p></article>
+          </div>
       </div>
     </main>
   );
