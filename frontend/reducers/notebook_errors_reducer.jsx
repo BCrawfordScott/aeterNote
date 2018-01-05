@@ -4,6 +4,7 @@ import { RECEIVE_NOTEBOOK_ERRORS,
   RECEIVE_NOTEBOOK,
   REMOVE_NOTEBOOK
 } from '../actions/notebook_actions';
+import { UPDATE_NOTEBOOK_FORM_MODAL } from '../actions/ui_actions';
 
 const notebookErrorsReducer = (state = [], action) => {
   Object.freeze(state);
@@ -14,7 +15,9 @@ const notebookErrorsReducer = (state = [], action) => {
       RECEIVE_NOTEBOOK,
       RECEIVE_NOTEBOOKS,
       REMOVE_NOTEBOOK,
-      REMOVE_NOTEBOOK_ERRORS):
+      REMOVE_NOTEBOOK_ERRORS,
+      UPDATE_NOTEBOOK_FORM_MODAL
+    ):
       return [];
     default:
       return state;
