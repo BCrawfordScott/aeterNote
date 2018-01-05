@@ -43,34 +43,34 @@ export const removeNotebookErrors = () => {
 export const fetchNotebooks = () => dispatch => {
   return APIUtil.fetchNotebooks().then(
       notebooks => dispatch(receiveNotebooks(notebooks)),
-      errors => dispatch(receiveNotebookErrors(errors))
+      errors => dispatch(receiveNotebookErrors(errors.responseJSON))
     );
 };
 
 export const fetchNotebook = id => dispatch => {
   return APIUtil.fetchNotebook(id).then(
       notebook => dispatch(receiveNotebook(notebook)),
-      errors => dispatch(receiveNotebookErrors(errors))
+      errors => dispatch(receiveNotebookErrors(errors.responseJSON))
     );
 };
 
 export const createNotebook = notebook => dispatch => {
   return APIUtil.createNotebook(notebook).then(
       newNotebook => dispatch(receiveNotebook(newNotebook)),
-      errors => dispatch(receiveNotebookErrors(errors))
+      errors => dispatch(receiveNotebookErrors(errors.responseJSON))
     );
 };
 
 export const updateNotebook = notebook => dispatch => {
   return APIUtil.updateNotebook(notebook).then(
       newNotebook => dispatch(receiveNotebook(newNotebook)),
-      errors => dispatch(receiveNotebookErrors(errors))
+      errors => dispatch(receiveNotebookErrors(errors.responseJSON))
     );
 };
 
 export const deleteNotebook = notebookId => dispatch => {
   return APIUtil.deleteNotebook(notebookId).then(
       notebook => dispatch(removeNotebook(notebookId)),
-      errors => dispatch(receiveNotebookErrors(errors))
+      errors => dispatch(receiveNotebookErrors(errors.responseJSON))
     );
 };

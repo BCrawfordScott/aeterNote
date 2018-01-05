@@ -8,7 +8,8 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 const _nullNotebooks = {};
 
 const notebookReducer = (state = _nullNotebooks, action) => {
-  let newState = Object.freeze(state);
+  Object.freeze(state);
+  let newState = Object.assign({}, state);
   switch(action.type){
     case(RECEIVE_NOTEBOOKS):
       return action.notebooks;

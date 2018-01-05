@@ -21,7 +21,7 @@ class NotebookIndex extends React.Component {
               <img src={window.staticImages.notebookPlus}/>
             </button>
           </header>
-          <ul>
+          <ul className= 'notebooks-ul'>
             {notebooks.map(notebook => <NotebookIndexItem key={notebook.id} title={notebook.title} />)}
           </ul>
         </div>

@@ -1,24 +1,51 @@
+.modal-holder {
+  min-height: 100vh;
+}
+
 .hide-notebook-form {
   display:none;
 }
 
 .form-modal {
+  top: 0;
+  left: 0;
   width: 100%;
-  min-height: 100vh;
-  position: absolute;
-  float: left;
+  height: 100%;
+  position: fixed;
   z-index: 20;
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+
+
 
   .container {
+    margin-top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    .temporary {
-      text-align: center;
-      margin: auto;
-      padding-top: 150px;
-      font-family: $serif;
+    font-family: $sans-serif;
+
+    .plus-logo {
+      height: 37px;
+      width: 37px;
+      margin-bottom: 7px;
+    }
+
+    h3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13.5px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: $EvernoteDarkGray;
+
+      .bottom-border {
+        margin-top: 14px;
+        width: 80%;
+        border-bottom: 1px solid $EvernoteMediumGray;
+      }
     }
 
     button {
@@ -31,6 +58,7 @@
       margin: auto;
       border: 2px solid $EvernoteMediumLightGray;
       border-radius: 5px;
+      margin-top: 20px;
 
     }
     button:hover {
