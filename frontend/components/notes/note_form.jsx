@@ -36,7 +36,7 @@ class NoteForm extends React.Component {
             <div className='bottom-border'/>
           </h3>
           <form
-            className='new-notebook-form'
+            className='notebook-form'
             onSubmit={this.handleSubmit}>
 
             <ul className='errors'>
@@ -54,13 +54,13 @@ class NoteForm extends React.Component {
               value={this.state.title}
               onChange={this.update('title')}/>
             <div className='form-buttons'>
-              <button className='cancel-button' onClick={(e) => {
+              <button className='notebook-button notebook-cancel' onClick={(e) => {
                   e.preventDefault();
                   updateNotebookFormModal();
                 }}>
                 Cancel
               </button>
-              <input id='submit'
+              <input className='notebook-button notebook-submit'
                 type='submit'
                 value={`${this.props.formType}`}/>
             </div>
