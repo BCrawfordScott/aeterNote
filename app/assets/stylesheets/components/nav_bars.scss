@@ -131,7 +131,8 @@
 .side-nav {
   flex: none;
   background-color: $EvernoteSuperLightGray;
-  width: 85px;
+  width: 70px;
+  border-right: 1px solid $EvernoteMediumLightGray;
 
   button {
     position: absolute;
@@ -139,13 +140,13 @@
   }
 
   .logout-button {
-    width: 57px;
-    padding: 8px 12px;
+    width: inherit;
+    padding: 8px 0px;
     font-family: $sans-serif;
     align-self: center;
     font-size: 15px;
     color: $EvernoteDarkGray;
-    border: 2px solid $EvernoteMediumLightGray;
+    border-top: 2px solid $EvernoteMediumLightGray;
     text-align: center;
 
   }

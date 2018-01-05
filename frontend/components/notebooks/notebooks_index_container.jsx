@@ -11,9 +11,15 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
-    notebooks: state.notebooks
+    notebooks: Object.values(state.notebooks)
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchNotebooks: () => dispatch(fetchNotebooks())
   };
 };
 
 
-export default connect(mapStateToProps, null)(NotebookIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(NotebookIndex);

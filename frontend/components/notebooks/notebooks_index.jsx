@@ -1,28 +1,28 @@
 import React from 'react';
-// import NoteIndexItem from './notebook_index_item';
+import NotebookIndexItem from './notebook_index_item';
 
 class NotebookIndex extends React.Component {
-  constructor(props){
-    super(props);
 
-  }
+  // componentDidMount() {
+  //   console.log(this.props.notebooks);
+  //   this.props.fetchNotebooks();
+  // }
+
 
   render(){
-
-    const notebooks = Object.values(this.props.notebooks);
-
+    const { notebooks } = this.props;
     return(
       <div className='notebooks'>
         <h3>NOTEBOOKS</h3>
 
         <ul>
-          {notebooks.map(notebook => notebook.title)}
+          {notebooks.map(notebook => <NotebookIndexItem key={notebook.id} title={notebook.title} />)}
         </ul>
       </div>
     );
   }
 }
 
-// <li> <NotebookIndexItem key={`${notebook.id}`} title={`${notebook.title}`} /> </li>
+
 
 export default NotebookIndex;

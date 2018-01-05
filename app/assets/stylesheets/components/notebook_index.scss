@@ -1,16 +1,46 @@
 .notebooks {
   flex: none;
-  width: 500px;
-  border-right: 4px solid $EvernoteSuperLightGray;
-  padding: 24px;
+  width: 457px;
+  border-right: 3px solid $EvernoteMediumLightGray;
 
   h3 {
+    box-sizing: border-box;
+    padding: 17px 24px 0px;
+    height: 122px;
     margin: 0;
-    padding: 0;
-    font-size: 22px;
+    font-size: 21px;
     font-family: $sans-serif;
     font-weight: 300;
     color: $EvernoteElephantGray;
     letter-spacing: 3px;
+    border-bottom: 1px solid $EvernoteMediumLightGray;
+  }
+
+
+}
+
+.notebook-item {
+  // width: 95%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+
+  h5{
+    margin: 0;
+    padding: 10px 20px;
+    font-family: $serif;
+    font-size: 16px;
+    color: black;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+  }
+
+  .bottom-border {
+    align-self: center;
+    width: 95%;
+    border-bottom: 1px solid $EvernoteMediumLightGray;
   }
 }
