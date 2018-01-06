@@ -1,12 +1,14 @@
 import React from 'react';
 import SideNav from '../navbars/side_nav_container';
 import Notebooks from '../notebooks/notebooks_index_container';
-import CreateNotebook from '../notebooks/notebook_form_container';
+import CreateNotebook from '../notebooks/create_notebook_form_container';
+import UpdateNotebook from '../notebooks/update_notebook_form_container';
 
 const NoteHome = () => {
   return(
     <div className='modal-holder'>
       <CreateNotebook />
+
       <main className='notes-main'>
 
           <SideNav />

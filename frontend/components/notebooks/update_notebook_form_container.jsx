@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import NoteForm from '../notes/note_form';
 import { updateNotebookFormModal } from '../../actions/ui_actions';
 import {
-  createNotebook,
+  updateNotebook,
   removeNotebookErrors
 } from '../../actions/notebook_actions';
 
@@ -13,14 +13,14 @@ const mapStateToProps = state => {
     reveal: revealIndex,
     title: "",
     errors: state.errors.notebooks,
-    formType: 'Create'
+    formType: 'Update'
   };
 };
 
 const mapDisptachToProps = dispatch => {
   return {
     updateNotebookFormModal: () => dispatch(updateNotebookFormModal()),
-    processForm: notebook => dispatch(createNotebook(notebook)),
+    processForm: notebook => dispatch(updateNotebook(notebook)),
     removeErrors: () => dispatch(removeNotebookErrors())
   };
 };

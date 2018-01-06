@@ -12,6 +12,7 @@ class NotebookIndex extends React.Component {
     const { notebooks } = this.props;
     const { reveal } = this.props;
     const { updateNotebookFormModal } = this.props;
+    const { updateNotebookSelected } = this.props;
     return(
       <div className={`modal ${reveal}`}>
         <div className='notebooks'>
@@ -21,9 +22,13 @@ class NotebookIndex extends React.Component {
               <img src={window.staticImages.notebookPlus}/>
             </button>
           </header>
-          
+
           <ul className= 'notebooks-ul'>
-            {notebooks.map(notebook => <NotebookIndexItem key={notebook.id} title={notebook.title} />)}
+            {notebooks.map(notebook => <NotebookIndexItem
+                                          key={notebook.id}
+                                          id={notebook.id}
+                                          title={notebook.title}
+                                          selectNotebook={updateNotebookSelected}/>)}
           </ul>
         </div>
       </div>

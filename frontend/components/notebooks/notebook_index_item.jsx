@@ -8,9 +8,14 @@ class NotebookIndexItem extends React.Component {
   }
 
   render(){
+    const notebookId = this.props.id;
     return(
       <div className= 'notebook-item-container'>
-        <li className='notebook-item'>
+        <li className='notebook-item'
+            onClick={() => {
+              console.log(notebookId);
+              this.props.selectNotebook(notebookId);
+            } }>
 
           <h5>
             {this.props.title}
