@@ -68,7 +68,6 @@
   justify-content: space-between;
 
 
-
   h5{
     margin: 0;
     padding: 10px 20px 0 20px;
@@ -88,9 +87,19 @@
     margin: 5px 20px;
   }
 
-  .bottom-border {
-    align-self: center;
-    width: 95%;
-    border-bottom: 1px solid $EvernoteMediumLightGray;
+}
+
+.bottom-border {
+  margin: auto;
+  // align-self: center;
+  width: 95%;
+  border-bottom: 1px solid $EvernoteMediumLightGray;
+}
+
+li:hover {
+  background-color: $EvernoteGreen;
+  h5, p {
+    color: #fff;
   }
+
 }

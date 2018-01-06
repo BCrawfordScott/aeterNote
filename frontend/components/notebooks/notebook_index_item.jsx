@@ -9,13 +9,15 @@ class NotebookIndexItem extends React.Component {
 
   render(){
     return(
-      <li className='notebook-item'>
+      <div className= 'notebook-item-container'>
+        <li className='notebook-item'>
 
-        <h5>{this.props.title}</h5>
+          <h5>{this.props.title}</h5>
 
-        <p>notes</p>
+          <p>notes</p>
+        </li>
         <div className='bottom-border'></div>
-      </li>
+      </div>
     );
   }
 }
