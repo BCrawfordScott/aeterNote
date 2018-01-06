@@ -12,7 +12,12 @@ class NotebookIndexItem extends React.Component {
       <div className= 'notebook-item-container'>
         <li className='notebook-item'>
 
-          <h5>{this.props.title}</h5>
+          <h5>
+            {this.props.title}
+            <button className='delete-notebook'>
+              <img src={window.staticImages.whiteTrashCan} />
+            </button>
+          </h5>
 
           <p>notes</p>
         </li>

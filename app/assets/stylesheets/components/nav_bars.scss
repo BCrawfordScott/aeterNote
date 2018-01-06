@@ -151,8 +151,9 @@
   .logout-button {
     position: absolute;
     bottom: 0px;
+    height: 65px;
     width: inherit;
-    padding: 8px 0px;
+    // padding: px 0px;
     font-family: $sans-serif;
     align-self: center;
     font-size: 15px;

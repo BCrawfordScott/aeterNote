@@ -69,6 +69,8 @@
 
 
   h5{
+    display: flex;
+    justify-content: space-between;
     margin: 0;
     padding: 10px 20px 0 20px;
     font-family: $serif;
@@ -76,6 +78,23 @@
     color: black;
     font-weight: 200;
     letter-spacing: 0.5px;
+
+    .delete-notebook {
+      height: 30px;
+      width: 30px;
+
+      img {
+        margin: auto;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .delete-notebook:hover {
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: border .5s;
+    }
   }
 
   p {
@@ -100,6 +119,10 @@ li:hover {
   background-color: $EvernoteGreen;
   h5, p {
     color: #fff;
+  }
+  .delete-notebook {
+    border: 2px solid $EvernoteGreen;
+
   }
 
 }
