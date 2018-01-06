@@ -13,7 +13,7 @@ class Notebook < ApplicationRecord
   validates :title, :user_id, presence: true
   validates :title, uniqueness: {
     scope: :user_id,
-    message: "You already have a notebook with that title."
+    message: "already belongs to one of your notebooks."
   }
 
   belongs_to :user

@@ -14,9 +14,14 @@ class NotebookIndexItem extends React.Component {
 
           <h5>
             {this.props.title}
-            <button className='delete-notebook'>
-              <img src={window.staticImages.whiteTrashCan} />
-            </button>
+            <div className='notebook-item-buttons'>
+              <button className='button-notebook'>
+                <img src={window.staticImages.whitePencil} />
+              </button>
+              <button className='button-notebook'>
+                <img src={window.staticImages.whiteTrashCan} />
+              </button>
+            </div>
           </h5>
 
           <p>notes</p>
