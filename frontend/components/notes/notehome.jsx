@@ -8,7 +8,9 @@ const NoteHome = () => {
     <div className='modal-holder'>
       <CreateNotebook />
       <main className='notes-main'>
-        <SideNav />
+
+          <SideNav />
+
         <div className='note-box'>
           <Notebooks />
           <div className='under-construction'>

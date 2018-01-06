@@ -1,28 +1,38 @@
-.hide-notebook {
-  display: none;
-}
 
 .modal {
   position: absolute;
+  transition: all 2s ease;
+  -webkit-transition: all 2s ease; /** Chrome & Safari **/
+  -moz-transition: all 2s ease; /** Firefox **/
+  -o-transition: all 2s ease;
   float: left;
   z-index: 9;
-  width: 90%;
-  height: 100vh;
-  min-height: 100%;
+  top: 0;
+  right: 0;
+  left: -389px;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.90);
 
 }
+.hide-notebook {
+  display: none;
+}
+
+.reveal-notebook{
+  transform: translate(460px, 0);
+}
 
 .notebooks {
-  min-height: 100vh;
   position:absolute;
+  top: 0;
+  bottom: 0;
   float: left;
   z-index: 10;
   flex: none;
   width: 457px;
   border-right: 3px solid $EvernoteMediumLightGray;
   background-color: #fff;
+
 
 
   header {
@@ -54,7 +64,10 @@
   }
 
   .notebooks-ul {
-    overflow: auto;
+    display:block;
+    z-index: 1;
+    overflow: scroll;
+
   }
 
 
@@ -86,7 +99,7 @@
       .button-notebook {
         height: 30px;
         width: 30px;
-    
+
 
         img {
           margin: auto;

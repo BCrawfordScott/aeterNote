@@ -129,12 +129,13 @@
 }
 
 .side-nav {
+  bottom: 0;
   flex: none;
   background-color: $EvernoteSuperLightGray;
   width: 70px;
   border-right: 1px solid $EvernoteMediumLightGray;
-  display: flex;
-  flex-direction: column;
+
+
 
   .notebooks-button {
     height: 60px;
@@ -149,7 +150,7 @@
   }
 
   .logout-button {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     height: 65px;
     width: inherit;

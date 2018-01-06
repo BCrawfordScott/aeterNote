@@ -11,7 +11,7 @@ import NotebookIndex from './notebooks_index';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
-  const revealIndex = (state.ui.notebook_tab) ? "reveal-notebooks" : "hide-notebook";
+  const revealIndex = (state.ui.notebook_tab) ? "reveal-notebook" : "hide-notebook";
   return {
     reveal: revealIndex,
     notebooks: Object.values(state.notebooks)
