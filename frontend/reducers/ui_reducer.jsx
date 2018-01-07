@@ -3,7 +3,8 @@ import {
   UPDATE_NOTEBOOK_FORM_MODAL,
   UPDATE_NOTEBOOK_SELECTED,
   UPDATE_SORT_OPTIONS,
-  UPDATE_EDIT_NOTEBOOK
+  UPDATE_EDIT_NOTEBOOK,
+  UPDATE_DELETE_WARNING
   } from '../actions/ui_actions';
 
 const _defaultUi = {
@@ -14,7 +15,8 @@ const _defaultUi = {
   notebook_form_modal: false,
   notebook_selected: false,
   sort_options: false,
-  edit_notebook: false
+  edit_notebook: false,
+  delete_warning: false
 };
 
 const uiReducer = (state = _defaultUi, action) => {
@@ -28,12 +30,15 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_NOTEBOOK_SELECTED):
       Object.assign(newState, { current_notebook: action.notebookId });
       Object.assign(newState, { notebook_selected: Boolean(newState.current_notebook) });
-      Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       return newState;
     case(UPDATE_SORT_OPTIONS):
       return Object.assign(newState, { sort_options: !(newState.sort_options) });
     case(UPDATE_EDIT_NOTEBOOK):
       return Object.assign(newState, { edit_notebook: !(newState.edit_notebook) });
+    case(UPDATE_DELETE_WARNING):
+      Object.assign(newState, { delete_warning: !(newState.deleteWarning) });
+      Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
+      return newState;
     default:
       return state;
   }

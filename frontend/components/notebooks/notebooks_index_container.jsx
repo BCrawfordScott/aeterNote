@@ -8,7 +8,9 @@ import {
 } from '../../actions/notebook_actions';
 import {
   updateNotebookFormModal,
-  updateNotebookSelected
+  updateNotebookSelected,
+  updateDeleteWarning,
+  updateNotebookTab
  } from '../../actions/ui_actions';
 import NotebookIndex from './notebooks_index';
 import { withRouter } from 'react-router-dom';
@@ -25,7 +27,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchNotebooks: () => dispatch(fetchNotebooks()),
     updateNotebookFormModal: () => dispatch(updateNotebookFormModal()),
-    updateNotebookSelected: notebookId => dispatch(updateNotebookSelected(notebookId))
+    updateNotebookSelected: notebookId => dispatch(updateNotebookSelected(notebookId)),
+    deleteWarning: () => dispatch(updateDeleteWarning()),
+    notebookTab: () => dispatch(updateNotebookTab())
   };
 };
 

@@ -3,6 +3,7 @@ export const UPDATE_NOTEBOOK_FORM_MODAL = 'UPDATE_NOTEBOOK_FORM_MODAL';
 export const UPDATE_NOTEBOOK_SELECTED = 'UPDATE_NOTEBOOK_SELECTED';
 export const UPDATE_SORT_OPTIONS = 'UPDATE_SORT_OPTIONS';
 export const UPDATE_EDIT_NOTEBOOK = 'UPDATE_EDIT_NOTEBOOK';
+export const UPDATE_DELETE_WARNING = 'UPDATE_DELETE_WARNING';
 
 export const updateNotebookTab = () => {
   return {
@@ -34,3 +35,9 @@ export const updateEditNotebook = () => {
     type: UPDATE_EDIT_NOTEBOOK
   };
 };
+
+ export const updateDeleteWarning = () => {
+   return {
+     type: UPDATE_DELETE_WARNING
+   };
+ };

@@ -13,8 +13,11 @@ class NotebookIndex extends React.Component {
     const { reveal } = this.props;
     const { updateNotebookFormModal } = this.props;
     const { updateNotebookSelected } = this.props;
+    const { deleteWarning } = this.props;
+    const { notebookTab } = this.props;
     return(
-      <div className={`modal ${reveal}`}>
+      <div className={`modal ${reveal}`}
+        onClick={() => notebookTab() }>
         <div className='notebooks'>
           <header>
             <h3>NOTEBOOKS</h3>
@@ -28,6 +31,7 @@ class NotebookIndex extends React.Component {
                                           key={notebook.id}
                                           id={notebook.id}
                                           title={notebook.title}
+                                          deleteWarning={deleteWarning}
                                           selectNotebook={updateNotebookSelected}/>)}
           </ul>
         </div>

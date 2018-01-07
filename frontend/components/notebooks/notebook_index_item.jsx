@@ -13,14 +13,14 @@ class NotebookIndexItem extends React.Component {
       <div className= 'notebook-item-container'>
         <li className='notebook-item'
             onClick={() => {
-              console.log(notebookId);
               this.props.selectNotebook(notebookId);
             } }>
 
           <h5>
             {this.props.title}
             <div className='notebook-item-buttons'>
-              <button className='button-notebook'>
+              <button className='button-notebook'
+                onClick={() => this.props.deleteWarning()}>
                 <img src={window.staticImages.whiteTrashCan} />
               </button>
             </div>

@@ -3,7 +3,8 @@ import EditNotebookForm from '../notebooks/edit_notebook_form';
 import { updateEditNotebook } from '../../actions/ui_actions';
 import {
   updateNotebook,
-  removeNotebookErrors
+  removeNotebookErrors,
+  updateDeleteWarning
 } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {
@@ -25,7 +26,8 @@ const mapDisptachToProps = dispatch => {
   return {
     updateEditNotebook: () => dispatch(updateEditNotebook()),
     processForm: notebook => dispatch(updateNotebook(notebook)),
-    removeErrors: () => dispatch(removeNotebookErrors())
+    removeErrors: () => dispatch(removeNotebookErrors()),
+    deleteWarning: () => dispatch(updateDeleteWarning())
   };
 };
 
