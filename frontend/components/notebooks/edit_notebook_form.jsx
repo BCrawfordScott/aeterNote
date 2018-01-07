@@ -39,7 +39,7 @@ class NoteForm extends React.Component {
           </h3>
           <h5 className='Overview'>Overview</h5>
           <form
-            className='notebook-form'
+            className='edit-notebook-form'
             onSubmit={this.handleSubmit}>
 
             <ul className='errors'>
@@ -50,21 +50,21 @@ class NoteForm extends React.Component {
               }
             </ul>
             <div className='title-box'>
-              <p className='mini-title'>Title</p><input
+              <p className='mini-title'>TITLE</p><input
                 className="edit-title"
                 type='text'
                 placeholder="Title your notebook"
                 value={this.state.title}
                 onChange={this.update('title')}/>
             </div>
-            <div className='form-buttons'>
-              <button className='notebook-button edit-cancel' onClick={(e) => {
+            <div className='edit-form-buttons'>
+              <button className='edit-notebook-button edit-cancel' onClick={(e) => {
                   e.preventDefault();
                   updateEditNotebook();
                 }}>
                 Cancel
               </button>
-              <input className='notebook-button edit-submit'
+              <input className='edit-notebook-button edit-submit'
                 type='submit'
                 value={`${this.props.formType}`}/>
             </div>
