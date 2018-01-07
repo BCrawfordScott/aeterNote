@@ -1,5 +1,6 @@
 import React from 'react';
 import NotebookIndexItem from './notebook_index_item';
+import DeleteWarning from './notebook_delete_warning';
 
 class NotebookIndex extends React.Component {
 
@@ -19,6 +20,7 @@ class NotebookIndex extends React.Component {
       <div className={`modal ${reveal}`}
         onClick={() => notebookTab() }>
         <div className='notebooks'>
+          <DeleteWarning />
           <header>
             <h3>NOTEBOOKS</h3>
             <button onClick={ () => updateNotebookFormModal() }>

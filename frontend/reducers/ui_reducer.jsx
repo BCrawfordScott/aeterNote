@@ -7,6 +7,10 @@ import {
   UPDATE_DELETE_WARNING
   } from '../actions/ui_actions';
 
+import {
+  REMOVE_NOTEBOOK
+} from '../actions/notebook_actions';
+
 const _defaultUi = {
   loading: false,
   fullpage_note: false,
@@ -36,9 +40,11 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_EDIT_NOTEBOOK):
       return Object.assign(newState, { edit_notebook: !(newState.edit_notebook) });
     case(UPDATE_DELETE_WARNING):
-      Object.assign(newState, { delete_warning: !(newState.deleteWarning) });
+      Object.assign(newState, { delete_warning: !(newState.delete_warning) });
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       return newState;
+    case(REMOVE_NOTEBOOK):
+      return Object.assign(newState, { current_notebook: false });
     default:
       return state;
   }
