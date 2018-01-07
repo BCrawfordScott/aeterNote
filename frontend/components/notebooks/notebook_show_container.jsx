@@ -11,10 +11,12 @@ const mapStateToProps = state => {
   const notebook = (state.notebooks[state.ui.current_notebook]) ?
     state.notebooks[state.ui.current_notebook] :
     {title: ''};
+  const locked = (Object.values(state.notebooks).length === 0) ? 'locked' : '';
   return {
     notebook: notebook,
     revealShow: revealShow,
-    revealSort: revealSort
+    revealSort: revealSort,
+    locked: locked
   };
 };
 

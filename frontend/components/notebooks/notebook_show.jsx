@@ -9,7 +9,9 @@ class NotebookShow extends React.Component {
     return(
       <div className={`notebook-show ${this.props.revealShow}`} >
         <header>
-          <img src={window.staticImages.infoI} onClick={this.props.updateEditNotebook}/>
+          <img className={this.props.locked}
+            src={window.staticImages.infoI}
+            onClick={this.props.updateEditNotebook}/>
           <EditNotebook />
           <h3 className='notebook-title'>{notebook.title}</h3>
         </header>

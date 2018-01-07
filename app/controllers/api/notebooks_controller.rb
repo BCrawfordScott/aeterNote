@@ -26,7 +26,7 @@ class Api::NotebooksController < ApplicationController
     if @notebook.update(notebook_params)
       render :show
     else
-      reder json: @notebook.errors.full_messages, status: 422
+      render json: @notebook.errors.full_messages, status: 422
     end
   end
 

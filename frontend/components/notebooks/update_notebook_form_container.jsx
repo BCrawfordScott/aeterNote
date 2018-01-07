@@ -10,10 +10,11 @@ const mapStateToProps = state => {
   const revealIndex = (state.ui.edit_notebook) ?
   "reveal-notebook-edit-form" : "hide-notebook-edit-form";
   const notebook = (state.notebooks[state.ui.current_notebook]) ?
-    state.notebooks[state.ui.current_notebook] : {title: ''};
+    state.notebooks[state.ui.current_notebook] : {id: false, title: ''};
   console.log(state.errors);
   return {
     reveal: revealIndex,
+    id: notebook.id,
     title: notebook.title,
     errors: state.errors.notebooks,
     formType: 'Update'

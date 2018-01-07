@@ -4,6 +4,7 @@ class NoteForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      id: this.props.id,
       title: this.props.title
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +18,7 @@ class NoteForm extends React.Component {
     e.preventDefault();
     const notebook = Object.assign({}, this.state);
     this.props.processForm(notebook).then(
-      newNotebook => this.props.updateNotebookFormModal()
+      newNotebook => this.props.updateEditNotebook()
     );
     this.props.removeErrors();
   }
