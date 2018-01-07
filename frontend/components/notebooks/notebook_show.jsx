@@ -1,4 +1,5 @@
 import React from 'react';
+import SortOptions from './sort_options';
 
 
 class NotebookShow extends React.Component {
@@ -7,14 +8,15 @@ class NotebookShow extends React.Component {
     return(
       <div className={`notebook-show ${this.props.revealShow}`} >
         <header>
-          <img src={window.staticImages.infoI} />
+          <img src={window.staticImages.infoI} onClick={this.props.updateEditNotebook}/>
           <h3 className='notebook-title'>{notebook.title}</h3>
         </header>
         <div className='note-info'>
           <div className='count-options'>
             <p>note count</p>
-            <div className='sort-options'>
+            <div className='sort-options' onClick={this.props.updateSortOptions}>
               Options <img src={window.staticImages.downArrow}/>
+            <SortOptions reveal={this.props.revealSort}/>
             </div>
           </div>
           <div className='notes-index'>
