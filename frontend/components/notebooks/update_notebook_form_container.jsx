@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import NoteForm from '../notebooks/notebook_form';
-import { updateNotebookFormModal } from '../../actions/ui_actions';
+import EditNotebookForm from '../notebooks/edit_notebook_form';
+import { updateEditNotebook } from '../../actions/ui_actions';
 import {
   updateNotebook,
   removeNotebookErrors
 } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {
-  const revealIndex = (state.ui.notebook_form_modal) ? "reveal-notebook-form" : "hide-notebook-form";
+  const revealIndex = (state.ui.edit_notebook) ? "reveal-notebook-edit-form" : "hide-notebook-edit-form";
   console.log(state.errors);
   return {
     reveal: revealIndex,
-    title: "",
+    title: state.notebooks[state.ui.current_notebook].title,
     errors: state.errors.notebooks,
     formType: 'Update'
   };
@@ -19,11 +19,11 @@ const mapStateToProps = state => {
 
 const mapDisptachToProps = dispatch => {
   return {
-    updateNotebookFormModal: () => dispatch(updateNotebookFormModal()),
+    updateEditNotebook: () => dispatch(updateEditNotebook()),
     processForm: notebook => dispatch(updateNotebook(notebook)),
     removeErrors: () => dispatch(removeNotebookErrors())
   };
 };
 
 
-export default connect(mapStateToProps, mapDisptachToProps)(NoteForm);
+export default connect(mapStateToProps, mapDisptachToProps)(EditNotebookForm);

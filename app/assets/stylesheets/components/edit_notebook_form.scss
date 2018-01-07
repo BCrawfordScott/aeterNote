@@ -1,0 +1,128 @@
+.modal-holder {
+  min-height: 100vh;
+}
+
+.hide-notebook-edit-form {
+  display:none;
+}
+
+.form-modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 1);
+  .edit-notebook-container {
+    width: 540px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $sans-serif;
+    .gray-i {
+      align-self: center;
+      height: 30px;
+      width: 30px;
+      margin-bottom: 25px;
+    }
+
+    .info-title  {
+
+      font-family: $sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13.5px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: $EvernoteMediumDarkGray;
+    }
+
+    .bottom-border {
+      margin-top: 13px;
+      width: 85%;
+      border-bottom: 1px solid $EvernoteMediumGray;
+    }
+
+    .Overview {
+      margin: 2px;
+      align-self: flex-start;
+      color: $EvernoteDarkGray;
+      font-family: $sans-serif;
+      font-weight: 600;
+    }
+
+    .title-box {
+      border: 1px solid $EvernoteMediumGray;
+      border-radius: 5px;
+      box-sizing: border-box;
+      width: 540px;
+    }
+    .mini-title{
+      display: inline;
+      border: 1px solid $EvernoteMediumGray;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 14px;
+      color: $EvernoteDarkGray;
+      margin: 5px;
+    }
+
+    .edit-title{
+      align-self: flex-start;
+      height: 35px;
+
+      font-family: $serif;
+      font-size: 14px;
+      color: $EvernoteGreen;
+      font-weight: 200;
+
+    }
+
+    .edit-title::placeholder {
+      color: $EvernoteMediumGray;
+    }
+
+    .notebook-button {
+      width: 195px;
+      height: 30px;
+      font-size: 13.5px;
+      text-align: center;
+      padding: 0;
+      margin: auto;
+    }
+
+
+  }
+}
+
+.form-buttons {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  .edit-cancel {
+    color: $EvernoteDarkGray;
+    border: 1px solid $EvernoteMediumGray;
+    border-radius: 5px;
+    background-color: $EvernoteMediumLightGray;
+    margin-right: 4px;
+
+
+  }
+  .edit-cancel:hover {
+
+    background-color: $EvernoteMediumGray;
+
+  }
+
+  .edit-submit {
+    color: #fff;
+    background-color: $EvernoteGreen;
+    border: 1px solid $EvernoteGreen;
+    border-radius: 5px;
+    margin-left: 4px;
+  }
+}

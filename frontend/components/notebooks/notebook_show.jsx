@@ -1,5 +1,6 @@
 import React from 'react';
 import SortOptions from './sort_options';
+import EditNotebook from './update_notebook_form_container';
 
 
 class NotebookShow extends React.Component {
@@ -9,6 +10,7 @@ class NotebookShow extends React.Component {
       <div className={`notebook-show ${this.props.revealShow}`} >
         <header>
           <img src={window.staticImages.infoI} onClick={this.props.updateEditNotebook}/>
+          <EditNotebook />
           <h3 className='notebook-title'>{notebook.title}</h3>
         </header>
         <div className='note-info'>

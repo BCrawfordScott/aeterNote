@@ -33,7 +33,7 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_SORT_OPTIONS):
       return Object.assign(newState, { sort_options: !(newState.sort_options) });
     case(UPDATE_EDIT_NOTEBOOK):
-      return Object.assign(newState, { edit_notebook: !(newState.sort_options) });
+      return Object.assign(newState, { edit_notebook: !(newState.edit_notebook) });
     default:
       return state;
   }
