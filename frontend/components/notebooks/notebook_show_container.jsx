@@ -13,7 +13,7 @@ const mapStateToProps = state => {
     {title: ''};
   const locked = (
     Object.values(state.notebooks).length === 0 ||
-    state.ui.current_notebook === false) ? 'locked' : '';
+    !(state.ui.current_notebook)) ? 'locked' : '';
   return {
     notebook: notebook,
     revealShow: revealShow,
