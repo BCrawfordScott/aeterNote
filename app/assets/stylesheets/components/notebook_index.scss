@@ -66,8 +66,8 @@
   .notebooks-ul {
     display:block;
     z-index: 1;
-    overflow: scroll;
-
+    height: 100vh;
+    overflow-y: scroll;
   }
 
 
@@ -137,6 +137,7 @@
 
 li:hover {
   background-color: $EvernoteGreen;
+  cursor: pointer;
   h5, p {
     color: #fff;
   }

@@ -14,6 +14,13 @@ class NoteForm extends React.Component {
     this.props.removeErrors();
   }
 
+  componentWillReceiveProps(newProps) {
+    this.sate = {
+      id: this.props.id,
+      title: this.props.title
+    };
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const notebook = Object.assign({}, this.state);
