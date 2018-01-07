@@ -15,11 +15,13 @@ class NoteForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.sate = {
+    this.state = {
       id: this.props.id,
       title: this.props.title
     };
   }
+
+
 
   handleSubmit(e) {
     e.preventDefault();
