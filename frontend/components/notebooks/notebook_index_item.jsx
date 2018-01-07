@@ -21,9 +21,6 @@ class NotebookIndexItem extends React.Component {
             {this.props.title}
             <div className='notebook-item-buttons'>
               <button className='button-notebook'>
-                <img src={window.staticImages.whitePencil} />
-              </button>
-              <button className='button-notebook'>
                 <img src={window.staticImages.whiteTrashCan} />
               </button>
             </div>

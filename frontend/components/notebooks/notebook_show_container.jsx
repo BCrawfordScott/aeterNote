@@ -8,8 +8,11 @@ import {
 const mapStateToProps = state => {
   const revealShow = (state.ui.notebook_tab) ? "reveal-show" : "hide-show";
   const revealSort = (state.ui.sort_options) ? "reveal-sort" : "hide-sort";
+  const notebook = (state.notebooks[state.ui.current_notebook]) ?
+    state.notebooks[state.ui.current_notebook] :
+    {title: ''};
   return {
-    notebook: state.notebooks[state.ui.current_notebook],
+    notebook: notebook,
     revealShow: revealShow,
     revealSort: revealSort
   };

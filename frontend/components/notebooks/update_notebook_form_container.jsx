@@ -7,11 +7,14 @@ import {
 } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {
-  const revealIndex = (state.ui.edit_notebook) ? "reveal-notebook-edit-form" : "hide-notebook-edit-form";
+  const revealIndex = (state.ui.edit_notebook) ?
+  "reveal-notebook-edit-form" : "hide-notebook-edit-form";
+  const notebook = (state.notebooks[state.ui.current_notebook]) ?
+    state.notebooks[state.ui.current_notebook] : {title: ''};
   console.log(state.errors);
   return {
     reveal: revealIndex,
-    title: state.notebooks[state.ui.current_notebook].title,
+    title: notebook.title,
     errors: state.errors.notebooks,
     formType: 'Update'
   };
