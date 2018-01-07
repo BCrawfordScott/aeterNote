@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import NoteForm from '../notes/note_form';
+import NoteForm from '../notebooks/notebook_form';
 import { updateNotebookFormModal } from '../../actions/ui_actions';
 import {
   createNotebook,

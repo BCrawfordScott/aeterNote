@@ -24,6 +24,7 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_NOTEBOOK_SELECTED):
       Object.assign(newState, { current_notebook: action.notebookId });
       Object.assign(newState, { notebook_selected: Boolean(newState.current_notebook) });
+      Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       return newState;
     default:
       return state;

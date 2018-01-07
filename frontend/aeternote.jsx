@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser){
     store = configureStore({
       session: { currentUser: window.currentUser },
-      notebooks: window.notebooks
+      notebooks: window.notebooks,
+      ui: { current_notebook: Object.keys(window.notebooks)[0]}
     });
     delete window.currentUser;
     delete window.notebooks;
