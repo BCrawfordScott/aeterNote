@@ -62,6 +62,7 @@
       box-sizing: border-box;
       width: 540px;
       height: 40px;
+      margin-bottom: 5px;
     }
     .mini-title{
       display: inline;
@@ -122,8 +123,26 @@
         }
       }
 
+      .delete-button {
+        align-self: flex-start;
+        color: $EvernoteGreen;
+        font-size: 14px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .delete-button:hover {
+        cursor: pointer;
+      }
+
+      .bottom-border2 {
+        padding-top: 15px;
+        width: 100%;
+        border-bottom: 1px solid $EvernoteMediumGray;
+      }
+
       .edit-form-buttons {
-        margin-top: 50px;
+        margin-top: 80px;
         display: flex;
         align-content: center;
 
@@ -153,6 +172,10 @@
           border: 1px solid $EvernoteGreen;
           border-radius: 5px;
           margin-left: 4px;
+        }
+
+        .edit-submit:hover {
+            background-color: $EvernoteHoverGreen;
         }
       }
     }

@@ -37,6 +37,7 @@ class NoteForm extends React.Component {
   render () {
     const { reveal } = this.props;
     const { updateEditNotebook } = this.props;
+    const { deleteWarning } = this.props;
     return(
       <div className={`form-modal ${reveal}`} >
         <div className='edit-notebook-container'>
@@ -65,6 +66,11 @@ class NoteForm extends React.Component {
                 value={this.state.title}
                 onChange={this.update('title')}/>
             </div>
+            <div className='delete-button'
+              onClick={ () => deleteWarning() }>
+              Delete notebook
+            </div>
+            <div className='bottom-border2'/>
             <div className='edit-form-buttons'>
               <button className='edit-notebook-button edit-cancel' onClick={(e) => {
                   e.preventDefault();

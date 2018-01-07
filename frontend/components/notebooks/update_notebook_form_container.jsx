@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import EditNotebookForm from '../notebooks/edit_notebook_form';
-import { updateEditNotebook } from '../../actions/ui_actions';
+import {
+  updateEditNotebook,
+  updateDeleteWarning
+} from '../../actions/ui_actions';
 import {
   updateNotebook,
-  removeNotebookErrors,
-  updateDeleteWarning
+  removeNotebookErrors
 } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {

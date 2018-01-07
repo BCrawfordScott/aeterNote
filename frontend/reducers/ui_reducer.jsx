@@ -43,6 +43,7 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_DELETE_WARNING):
       Object.assign(newState, { delete_warning: !(newState.delete_warning) });
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
+      Object.assign(newState, { edit_notebook: false });
       return newState;
     case(REMOVE_NOTEBOOK):
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });

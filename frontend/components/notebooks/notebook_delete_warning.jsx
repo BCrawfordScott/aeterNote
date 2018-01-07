@@ -27,7 +27,7 @@ class NoteBookDelete extends React.Component {
     return(
       <div className={`form-modal ${reveal}`} >
         <div className='container'>
-          <img className='plus-logo'src={window.staticImages.notebookPlus}/>
+          <img className='plus-logo'src={window.staticImages.grayTrashCan}/>
           <h3>
             {`${this.props.formType.toUpperCase()} NOTEBOOK`}
             <div className='bottom-border'/>
@@ -36,7 +36,7 @@ class NoteBookDelete extends React.Component {
             className='notebook-form'
             onSubmit={this.handleSubmit}>
 
-            <h3 className='delelete script'>
+            <h3 className='delete-script'>
               Are you sure you want to delete <p className='delete-title'>{title}?</p>
             </h3>
 

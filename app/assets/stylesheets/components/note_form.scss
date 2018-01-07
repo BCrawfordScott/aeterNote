@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 20;
+  z-index: 15;
   background-color: rgba(255, 255, 255, 0.9);
   // display: flex;
   // flex-direction: column;
@@ -84,6 +84,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .delete-script {
+        margin-top: 0;
+        font-family: $serif;
+        font-size: 32px;
+        margin-bottom: 80px;
+        font-weight: 100;
+        color: $EvernoteDarkGray;
+
+        .delete-title {
+          font-weight: 400;
+        }
+      }
     }
     .title {
       width: 300px;
@@ -130,6 +143,10 @@
       border: 1px solid $EvernoteGreen;
       border-radius: 5px;
       margin-left: 4px;
+    }
+
+    .notebook-submit:hover {
+      background-color: $EvernoteHoverGreen;
     }
 
   }
