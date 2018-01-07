@@ -68,6 +68,7 @@ class NoteForm extends React.Component {
             <div className='edit-form-buttons'>
               <button className='edit-notebook-button edit-cancel' onClick={(e) => {
                   e.preventDefault();
+                  this.setState({title: this.props.title});
                   updateEditNotebook();
                 }}>
                 Cancel

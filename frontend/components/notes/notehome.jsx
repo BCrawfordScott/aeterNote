@@ -4,12 +4,13 @@ import Notebooks from '../notebooks/notebooks_index_container';
 import CreateNotebook from '../notebooks/create_notebook_form_container';
 import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
+import DeleteWarning from '../notebooks/notebook_delete_warning';
 
 const NoteHome = () => {
   return(
     <div className='modal-holder'>
       <CreateNotebook />
-
+      <DeleteWarning />
       <main className='notes-main'>
 
           <SideNav />

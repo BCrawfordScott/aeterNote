@@ -8,7 +8,8 @@ import {
   } from '../actions/ui_actions';
 
 import {
-  REMOVE_NOTEBOOK
+  REMOVE_NOTEBOOK,
+  RECEIVE_NOTEBOOK
 } from '../actions/notebook_actions';
 
 const _defaultUi = {
@@ -44,7 +45,11 @@ const uiReducer = (state = _defaultUi, action) => {
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       return newState;
     case(REMOVE_NOTEBOOK):
-      return Object.assign(newState, { current_notebook: false });
+      Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
+      Object.assign(newState, { current_notebook: false });
+      return newState;
+    case(RECEIVE_NOTEBOOK):
+      return Object.assign(newState, { current_notebook: action.notebook.id});
     default:
       return state;
   }
