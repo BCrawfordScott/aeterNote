@@ -14,7 +14,6 @@ const mapStateToProps = state => {
   "reveal-notebook-edit-form" : "hide-notebook-edit-form";
   const notebook = (state.notebooks[state.ui.current_notebook]) ?
     state.notebooks[state.ui.current_notebook] : {id: false, title: ''};
-  console.log(state.errors);
   return {
     reveal: revealIndex,
     id: notebook.id,

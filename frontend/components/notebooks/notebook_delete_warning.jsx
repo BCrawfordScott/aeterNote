@@ -62,7 +62,6 @@ const mapStateToProps = state => {
   const revealIndex = (state.ui.delete_warning) ? "reveal-delete-warning" : "hide-delete-warning";
   const notebook = (state.notebooks[state.ui.current_notebook]) ?
     state.notebooks[state.ui.current_notebook] : {id: false, title: ''};
-  console.log(revealIndex);
   return {
     reveal: revealIndex,
     id: notebook.id,

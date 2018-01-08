@@ -10,7 +10,6 @@ import {
 } from '../actions/ui_actions';
 
 const notebookErrorsReducer = (state = [], action) => {
-  console.log('first hit');
   Object.freeze(state);
   switch(action.type){
     case(RECEIVE_NOTEBOOK_ERRORS):
@@ -21,7 +20,6 @@ const notebookErrorsReducer = (state = [], action) => {
     case(REMOVE_NOTEBOOK_ERRORS):
     case(UPDATE_NOTEBOOK_FORM_MODAL):
     case(UPDATE_EDIT_NOTEBOOK):
-      console.log('hit');
       return [];
     default:
       return state;
