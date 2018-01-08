@@ -128,46 +128,46 @@
 
 }
 
-.side-nav {
-  bottom: 0;
-  flex: none;
-  background-color: $EvernoteSuperLightGray;
-  width: 70px;
-  border-right: 1px solid $EvernoteMediumLightGray;
-
-
-
-  .notebooks-button {
-    height: 60px;
-    width: 60px;
-    display: flex;
-
-
-    img {
-      margin-left: 5px;
-
-    }
-  }
-
-  .logout-button {
-    position: fixed;
-    bottom: 0px;
-    height: 65px;
-    width: inherit;
-    // padding: px 0px;
-    font-family: $sans-serif;
-    align-self: center;
-    font-size: 15px;
-    color: $EvernoteDarkGray;
-    border-top: 2px solid $EvernoteMediumLightGray;
-    text-align: center;
-    margin: auto;
-
-  }
-
-  .logout-button:hover{
-    color: #fff;
-    background-color: $EvernoteGreen;
-    border-color: $EvernoteGreen;
-  }
-}
+// .side-nav {
+//   bottom: 0;
+//   flex: none;
+//   background-color: $EvernoteSuperLightGray;
+//   width: 70px;
+//   border-right: 1px solid $EvernoteMediumLightGray;
+//
+//
+//
+//   .notebooks-button {
+//     height: 60px;
+//     width: 60px;
+//     display: flex;
+//
+//
+//     img {
+//       margin-left: 5px;
+//
+//     }
+//   }
+//
+//   .logout-button {
+//     position: fixed;
+//     bottom: 0px;
+//     height: 65px;
+//     width: inherit;
+//     // padding: px 0px;
+//     font-family: $sans-serif;
+//     align-self: center;
+//     font-size: 15px;
+//     color: $EvernoteDarkGray;
+//     border-top: 2px solid $EvernoteMediumLightGray;
+//     text-align: center;
+//     margin: auto;
+//
+//   }
+//
+//   .logout-button:hover{
+//     color: #fff;
+//     background-color: $EvernoteGreen;
+//     border-color: $EvernoteGreen;
+//   }
+// }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SideNav extends React.Component {
 
@@ -11,6 +12,9 @@ class SideNav extends React.Component {
             onClick={() => this.props.updateNotebookTab()}>
             <img src={window.staticImages.notebookIcon}/>
           </button>
+          <div className='note-index-button'
+            onClick={() => this.props.history.push('/notes')}>
+          </div>
         </div>
 
         <button className='logout-button' onClick={() => this.props.logout()}>Logout</button>
@@ -19,4 +23,4 @@ class SideNav extends React.Component {
   }
 }
 
-export default SideNav;
+export default withRouter(SideNav);
