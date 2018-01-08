@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import Quill from './components/notes/quill';
+
 //TESTING//
 
 //TESTING//

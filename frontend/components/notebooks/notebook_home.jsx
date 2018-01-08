@@ -5,7 +5,7 @@ import CreateNotebook from '../notebooks/create_notebook_form_container';
 import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
-// import Quill from './quill';
+
 
 
 const NoteBookHome = () => {
@@ -30,7 +30,7 @@ const NoteBookHome = () => {
               <p>-Thanks for stopping by!</p>
               <p>Check back soon for more elephantastic-features!</p></article>
 
-              <div className='quill' id='quill'>
+              <div>
               </div>
           </div>
         </div>

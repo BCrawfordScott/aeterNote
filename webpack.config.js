@@ -43,10 +43,7 @@ module.exports = {
 
   devtool: 'source-map',
   resolve: {
-      alias: {
-        'parchment': path.resolve(__dirname, 'node_modules/parchment/src/parchment.ts'),
-        'quill$': path.resolve(__dirname, 'node_modules/quill/quill.js'),
-      },
+
     extensions: [".ts", ".js", ".jsx", ".svg", "*"]
   }
 };

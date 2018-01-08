@@ -6,7 +6,8 @@ import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
 import Notebooks from '../notebooks/notebooks_index_container';
-
+import Note from './note';
+import ReactQuill from 'react-quill';
 const NoteHome = () => {
 
   return(
@@ -22,17 +23,18 @@ const NoteHome = () => {
 
           <Notes />
           <Notebooks />
-          <div className='under-construction'>
-            <img className='logo' src={window.staticImages.logoMain} />
-            <article>
-              <p>Tibi gratias ago pro cum stetissent iuxta!</p>
-              <p>-Thanks for stopping by!</p>
-              <p>Check back soon for more elephantastic-features!</p></article>
 
-              <div className='quill' id='quill'>
-              </div>
+            <div className='under-construction'>
+              <img className='logo' src={window.staticImages.logoMain} />
+              <article>
+                <p>Tibi gratias ago pro cum stetissent iuxta!</p>
+                <p>-Thanks for stopping by!</p>
+                <p>Check back soon for more elephantastic-features!</p></article>
+
+                <Note />
+            </div>
           </div>
-        </div>
+
       </main>
     </div>
   );
