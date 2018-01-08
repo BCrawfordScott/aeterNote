@@ -8,8 +8,10 @@ import {
 
 const mapStateToProps = state => {
   const revealSort = (state.ui.sort_options) ? "reveal-sort" : "hide-sort";
+  const notes = Object.values(state.notes);
   return {
-    revealSort: revealSort
+    revealSort: revealSort,
+    notes: notes
   };
 };
 

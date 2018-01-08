@@ -26,13 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch; //TESTING//
 
   ReactDOM.render(<Root store={ store } />, root);
-  var container = document.querySelector("#quill");
-  var quill = new Quill(container, {
-    modules: {
-      toolbar: true
-    },
-    theme: {
-      snow: true
-    }
-  });
 });
+
+
+// var container = document.querySelector("#quill");
+// var quill = new Quill(container, {
+//   modules: {
+//     toolbar: true
+//   },
+//   theme: {
+//     snow: true
+//   }
+// });

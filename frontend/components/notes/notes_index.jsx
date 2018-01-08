@@ -1,14 +1,16 @@
 import React from 'react';
 import SortOptions from '../notebooks/sort_options';
+import NoteIndexItem from './note_index_item';
 
 class NoteIndex extends React.Component {
 
   componentDidMount() {
-    console.log('mounted');
+
     this.props.fetchNotes();
   }
 
   render () {
+    const { notes } = this.props;
     return(
       <div className='notes-index'>
         <header className='notes-header'>
@@ -22,6 +24,11 @@ class NoteIndex extends React.Component {
           </div>
         </header>
         <ul className='notes-ul'>
+          {notes.map(note => {
+            return <NoteIndexItem
+                      key={note.id}
+                      note={note} />;
+          })}
         </ul>
       </div>
     );

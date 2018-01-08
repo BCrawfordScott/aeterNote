@@ -8,7 +8,6 @@ const notesReducer = (state = _nullNotes, action) => {
   let newState = Object.assign({}, newState);
   switch(action.type){
     case(RECEIVE_NOTES):
-    console.log(action.notes);
       return action.notes;
     default:
       return state;
