@@ -5,8 +5,11 @@ import CreateNotebook from '../notebooks/create_notebook_form_container';
 import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
+import Quill from './quill';
+
 
 const NoteHome = () => {
+
   return(
     <div className='modal-holder'>
       <CreateNotebook />
@@ -16,6 +19,8 @@ const NoteHome = () => {
           <SideNav />
 
         <div className='note-box'>
+
+
           <Notebooks />
           <NotebookShow />
           <div className='under-construction'>
@@ -24,9 +29,12 @@ const NoteHome = () => {
               <p>Tibi gratias ago pro cum stetissent iuxta!</p>
               <p>-Thanks for stopping by!</p>
               <p>Check back soon for more elephantastic-features!</p></article>
-            </div>
+
+              <div className='quill' id='quill'>
+              </div>
           </div>
-        </main>
+        </div>
+      </main>
     </div>
   );
 };
