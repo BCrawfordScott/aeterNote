@@ -20,3 +20,8 @@ Notebook.create!([
   {title: "Acts", user_id: User.last.id},
   {title: "Competition", user_id: User.last.id}
 ])
+
+Note.create!([
+  {title: "Summary", content: "Phineas Taylor Barnum (July 5, 1810 – April 7, 1891) was an American showman, politician, and businessman remembered for promoting celebrated hoaxes and for founding the Barnum & Bailey Circus (1871-2017)", user_id: User.last.id, notebook_id: User.last.notebooks.first.id },
+  {title: "Jenny Lind", content: "Says there was never an affair...yeah right.", user_id: User.last.id, notebook_id: User.last.notebooks.first.id }
+])
