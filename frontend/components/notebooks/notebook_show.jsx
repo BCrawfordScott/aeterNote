@@ -7,8 +7,10 @@ class NotebookShow extends React.Component {
   render () {
     const { notebook } = this.props;
     return(
-      <div className={`notebook-show ${this.props.revealShow}`} >
-        <header>
+      <div className={`${this.props.revealShow}`}>
+
+      <div className={`notebook-show`} >
+        <header className='notebook-header'>
           <img className={this.props.locked}
             src={window.staticImages.infoI}
             onClick={this.props.updateEditNotebook}/>
@@ -28,6 +30,7 @@ class NotebookShow extends React.Component {
             </ul>
           </div>
         </div>
+      </div>
       </div>
     );
   }

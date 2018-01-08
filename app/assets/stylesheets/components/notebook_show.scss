@@ -1,4 +1,7 @@
 
+.hide-show {
+  display: none;
+}
 .notebook-show {
 
   top: 0;
@@ -8,10 +11,7 @@
   display: flex;
   flex-direction: column;
 
-  .hide-show {
-    display: none;
-  }
-  header {
+  .notebook-header {
 
     background-color: $EvernoteOffBlack;
     height: 152px;
