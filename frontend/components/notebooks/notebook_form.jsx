@@ -13,14 +13,16 @@ class NoteForm extends React.Component {
     this.props.removeErrors();
   }
 
+  componentWillReceiveProps() {
+    this.setState({ title: '' });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const notebook = Object.assign({}, this.state);
     this.props.processForm(notebook).then(
       newNotebook => this.props.updateNotebookFormModal()
     );
-    this.props.removeErrors();
-    this.setState({ title: '' });
   }
 
   update(field) {

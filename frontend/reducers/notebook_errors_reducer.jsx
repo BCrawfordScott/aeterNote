@@ -10,18 +10,18 @@ import {
 } from '../actions/ui_actions';
 
 const notebookErrorsReducer = (state = [], action) => {
+  console.log('first hit');
   Object.freeze(state);
   switch(action.type){
     case(RECEIVE_NOTEBOOK_ERRORS):
       return action.errors;
-    case(
-      RECEIVE_NOTEBOOK,
-      RECEIVE_NOTEBOOKS,
-      REMOVE_NOTEBOOK,
-      REMOVE_NOTEBOOK_ERRORS,
-      UPDATE_NOTEBOOK_FORM_MODAL,
-      UPDATE_EDIT_NOTEBOOK
-    ):
+    case(RECEIVE_NOTEBOOK):
+    case(RECEIVE_NOTEBOOKS):
+    case(REMOVE_NOTEBOOK):
+    case(REMOVE_NOTEBOOK_ERRORS):
+    case(UPDATE_NOTEBOOK_FORM_MODAL):
+    case(UPDATE_EDIT_NOTEBOOK):
+      console.log('hit');
       return [];
     default:
       return state;
