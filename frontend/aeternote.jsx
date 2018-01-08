@@ -4,17 +4,7 @@ import configureStore from './store/store.js';
 import Root from './components/root';
 
 //TESTING//
-import * as NotebookActions from './actions/notebook_actions';
-window.RECEIVE_NOTEBOOK = NotebookActions.RECEIVE_NOTEBOOK;
-window.RECEIVE_NOTEBOOKS = NotebookActions.RECEIVE_NOTEBOOKS;
-window.REMOVE_NOTEBOOK = NotebookActions.REMOVE_NOTEBOOK;
-window.RECEIVE_NOTEBOOK_ERRORS = NotebookActions.RECEIVE_NOTEBOOK_ERRORS;
-window.fetchNotebook = NotebookActions.fetchNotebook;
-window.fetchNotebooks = NotebookActions.fetchNotebooks;
-window.createNotebook = NotebookActions.createNotebook;
-window.updateNotebook = NotebookActions.updateNotebook;
-window.deleteNotebook = NotebookActions.deleteNotebook;
-import { logout } from './actions/session_actions';
+
 //TESTING//
 
 document.addEventListener('DOMContentLoaded', () => {
