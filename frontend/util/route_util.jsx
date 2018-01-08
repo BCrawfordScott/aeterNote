@@ -7,7 +7,7 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
       !loggedIn ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/notes" />
+        <Redirect to="/notebooks" />
       )
     )}/>
 );
@@ -23,7 +23,7 @@ const Protected = ({ component: Component, path, loggedIn }) => (
 );
 
 const mapStateToProps = state => {
-  
+
   return {loggedIn: Boolean(state.session.currentUser)};
 };
 

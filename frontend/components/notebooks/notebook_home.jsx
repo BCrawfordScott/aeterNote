@@ -5,10 +5,10 @@ import CreateNotebook from '../notebooks/create_notebook_form_container';
 import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
-import Quill from './quill';
+// import Quill from './quill';
 
 
-const NoteHome = () => {
+const NoteBookHome = () => {
 
   return(
     <div className='modal-holder'>
@@ -39,4 +39,4 @@ const NoteHome = () => {
   );
 };
 
-export default NoteHome;
+export default NoteBookHome;
