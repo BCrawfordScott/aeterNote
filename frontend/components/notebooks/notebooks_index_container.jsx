@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotebookIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NotebookIndex));

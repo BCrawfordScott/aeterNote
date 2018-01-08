@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 
 class NotebookIndexItem extends React.Component {
@@ -14,6 +15,7 @@ class NotebookIndexItem extends React.Component {
         <li className='notebook-item'
             onClick={() => {
               this.props.selectNotebook(notebookId);
+              this.props.history.push('/notebooks');
             } }>
 
           <h5>
@@ -35,4 +37,4 @@ class NotebookIndexItem extends React.Component {
 }
 // <h5>this.props.title</h5>
 
-export default NotebookIndexItem;
+export default withRouter(NotebookIndexItem);
