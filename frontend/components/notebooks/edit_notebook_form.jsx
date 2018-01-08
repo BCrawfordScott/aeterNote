@@ -15,10 +15,10 @@ class NoteForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.state = {
+    this.setState({
       id: this.props.id,
       title: this.props.title
-    };
+    });
   }
 
 
