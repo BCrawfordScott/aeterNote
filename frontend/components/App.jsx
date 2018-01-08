@@ -5,6 +5,7 @@ import SoloLogin from './session/session_solo_login.jsx';
 import SoloSignup from './session/session_solo_signup.jsx';
 import HomePage from './homepage.jsx';
 import NoteBookHome from './notebooks/notebook_home';
+import NoteHome from './notes/notes_home';
 import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 import {
   Route,
@@ -16,6 +17,7 @@ import {
 
 const App = () => (
     <div>
+      <ProtectedRoute path ='/notes' component={ NoteHome } />
       <ProtectedRoute path='/notebooks' component={ NoteBookHome } />
       <AuthRoute exact path='/' component={ HomePage } />
       <AuthRoute path='/login' component={ SoloLogin } />

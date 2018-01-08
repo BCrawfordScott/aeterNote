@@ -1,0 +1,62 @@
+.notes-index {
+  top: 0;
+  bottom: 0;
+  width: 348px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid $EvernoteMediumLightGray;
+
+  .notes-header {
+
+    height: 99px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $EvernoteMediumLightGray;
+
+    h3 {
+      text-align: Left;
+      margin: 23px 25px;
+      color: $EvernoteDarkGray;
+      font-family: $sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      font-weight: 200;
+    }
+    .note-count-options {
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid $EvernoteMediumGray;
+
+      p{
+        margin: 10px 25px;
+        font-family: $sans-serif;
+        color: $EvernoteMediumGray;
+      }
+
+      .sort-options {
+        margin: 10px 15px;
+        font-family: $sans-serif;
+        color: $EvernoteElephantGray;
+        img {
+          display: inline;
+          height: 8px;
+          width: 8px;
+        }
+      }
+
+      .sort-options:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .notes-ul {
+    display:block;
+    z-index: 1;
+    height: calc(100vh - 124px);
+    overflow-y: scroll;
+  }
+}
