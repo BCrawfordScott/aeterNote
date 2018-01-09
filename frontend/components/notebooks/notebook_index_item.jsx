@@ -10,6 +10,7 @@ class NotebookIndexItem extends React.Component {
 
   render(){
     const notebookId = this.props.id;
+    const noteCount = this.props.noteIds.length;
     return(
       <div className= 'notebook-item-container'>
         <li className='notebook-item'
@@ -28,7 +29,7 @@ class NotebookIndexItem extends React.Component {
             </div>
           </h5>
 
-          <p>notes</p>
+          <p>{`${noteCount} notes`}</p>
         </li>
         <div className='bottom-border'></div>
       </div>

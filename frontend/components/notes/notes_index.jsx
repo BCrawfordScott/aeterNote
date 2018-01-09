@@ -11,12 +11,13 @@ class NoteIndex extends React.Component {
 
   render () {
     const { notes } = this.props;
+    const { noteCount } = this.props;
     return(
       <div className='notes-index'>
         <header className='notes-header'>
           <h3 className='placeholder'>NOTES</h3>
           <div className='note-count-options'>
-            <p>note count</p>
+            <p>{`${noteCount} NOTES`}</p>
             <div className='sort-options' onClick={this.props.updateSortOptions}>
               Options <img src={window.staticImages.downArrow}/>
             <SortOptions reveal={this.props.revealSort}/>

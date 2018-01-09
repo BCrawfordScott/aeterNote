@@ -18,6 +18,7 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = state => {
   const revealIndex = (state.ui.notebook_tab) ? "reveal-notebook" : "hide-notebook";
   const revealModal = (state.ui.notebook_tab) ? "reveal-modal-bg" : "hide-modal-bg";
+
   return {
     reveal: revealIndex,
     revealModal: revealModal,

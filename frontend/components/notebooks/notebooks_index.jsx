@@ -43,6 +43,7 @@ class NotebookIndex extends React.Component {
                 key={notebook.id}
                 id={notebook.id}
                 title={notebook.title}
+                noteIds={notebook.note_ids}
                 deleteWarning={deleteWarning}
                 selectNotebook={updateNotebookSelected}/>)}
               </ul>
