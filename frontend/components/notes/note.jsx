@@ -11,7 +11,7 @@ class QuillNote extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleEditorChange = this.handleEditorChange.bind(this);
-    this.handleSaveAction = this. handleSaveAction.bind(this);
+    this.handleSaveAction = this.handleSaveAction.bind(this);
   }
 
 
@@ -20,6 +20,7 @@ class QuillNote extends React.Component {
       id: newProps.note.id,
       title: newProps.note.title,
       content: newProps.note.content,
+      plain_text: newProps.note.plain_text,
       notebook_id: newProps.note.notebook_id
     });
     this.setState((newProps.note.id) ?
@@ -38,7 +39,10 @@ class QuillNote extends React.Component {
   }
 
   handleEditorChange(content, delta, source, editor) {
-    this.setState({ content: content });
+    this.setState({
+      content: content,
+      plain_text: editor.getText().trim()
+    });
   }
 
   handleSaveAction() {
@@ -46,6 +50,7 @@ class QuillNote extends React.Component {
       id: this.state.id,
       title: this.state.title,
       content: this.state.content,
+      plain_text: this.state.plain_text,
       notebook_id: this.state.notebook_id,
     };
     this.state.saveAction(note);

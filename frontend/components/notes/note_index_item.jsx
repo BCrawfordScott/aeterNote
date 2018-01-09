@@ -26,7 +26,7 @@ class NoteIndexItem extends React.Component {
             </div>
           </h5>
           <div className='note-content-container'>
-            <p className='note-content'>{note.content}</p>
+            <p className='note-content'>{note.plain_text}</p>
           </div>
         </li>
         <div className='bottom-border'></div>

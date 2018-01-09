@@ -36,6 +36,7 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_NOTEBOOK_SELECTED):
       Object.assign(newState, { current_notebook: action.notebookId });
       Object.assign(newState, { notebook_selected: Boolean(newState.current_notebook) });
+      Object.assign(newState, { selected_note: false });
       return newState;
     case(UPDATE_SORT_OPTIONS):
       return Object.assign(newState, { sort_options: !(newState.sort_options) });

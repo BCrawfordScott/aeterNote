@@ -12,6 +12,7 @@ const mapStateToProps = state => {
     {
       title: '',
       content: '',
+      plain_text: '',
       notebook_id: Object.keys(state.notebooks)[0]
     };
 
