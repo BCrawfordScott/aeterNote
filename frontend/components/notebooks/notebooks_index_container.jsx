@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
     updateNotebookFormModal: () => dispatch(updateNotebookFormModal()),
     updateNotebookSelected: notebookId => dispatch(updateNotebookSelected(notebookId)),
     deleteWarning: () => dispatch(updateDeleteWarning()),
-    notebookTab: () => dispatch(updateNotebookTab())
+    notebookTab: () => dispatch(updateNotebookTab()),
   };
 };
 

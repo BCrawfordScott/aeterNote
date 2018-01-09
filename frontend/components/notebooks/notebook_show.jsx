@@ -1,11 +1,20 @@
 import React from 'react';
 import SortOptions from './sort_options';
 import EditNotebook from './update_notebook_form_container';
+import NoteIndexItem from '../notes/note_index_item';
 
 
 class NotebookShow extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchNotes();
+  }
+
   render () {
     const { notebook } = this.props;
+    const { noteCount } = this.props;
+    const notes = (this.props.notes[0]) ? this.props.notes : [{id: ''}];
+    console.log(notes);
     return(
       <div className={`${this.props.revealShow}`}>
 
@@ -19,14 +28,19 @@ class NotebookShow extends React.Component {
         </header>
         <div className='note-info'>
           <div className='count-options'>
-            <p>note count</p>
+            <p>{`${noteCount} notes`}</p>
             <div className='sort-options' onClick={this.props.updateSortOptions}>
               Options <img src={window.staticImages.downArrow}/>
             <SortOptions reveal={this.props.revealSort}/>
             </div>
           </div>
           <div className='notes-index'>
-            <ul className='notebok-notes'>
+            <ul className='notes-ul'>
+              {notes.map(note => {
+                return <NoteIndexItem
+                          key={note.id}
+                          note={note} />;
+              })}
             </ul>
           </div>
         </div>

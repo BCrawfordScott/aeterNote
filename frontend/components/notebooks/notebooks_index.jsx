@@ -13,7 +13,6 @@ class NotebookIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchNotebooks();
-    this.setState({ hide: "" });
   }
 
 

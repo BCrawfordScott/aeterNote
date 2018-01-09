@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import NotebookShow from './notebook_show';
+import { fetchNotes } from '../../actions/note_actions';
 import {
   updateSortOptions ,
   updateEditNotebook
@@ -14,8 +15,13 @@ const mapStateToProps = state => {
   const locked = (
     Object.values(state.notebooks).length === 0 ||
     !(state.ui.current_notebook)) ? 'locked' : '';
+  const noteCount = (notebook.note_ids) ? notebook.note_ids.length : 0;
+  const notes = (notebook.note_ids) ?
+    notebook.note_ids.map(noteId => state.notes[noteId]) : [];
   return {
     notebook: notebook,
+    noteCount: noteCount,
+    notes: notes,
     revealShow: revealShow,
     revealSort: revealSort,
     locked: locked
@@ -25,7 +31,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     updateSortOptions: () => dispatch(updateSortOptions()),
-    updateEditNotebook: () => dispatch(updateEditNotebook())
+    updateEditNotebook: () => dispatch(updateEditNotebook()),
+    fetchNotes: () => dispatch(fetchNotes())
   };
 };
 
