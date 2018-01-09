@@ -44,7 +44,7 @@ class Api::NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:notebook).permit(:title, :content, :notebook_id)
+    params.require(:note).permit(:title, :content, :notebook_id)
   end
 
   def owns_note?(note)
@@ -52,7 +52,7 @@ class Api::NotesController < ApplicationController
   end
 
   def proper_ownership
-    unless owns_note?(Notebook.find(params[:id]))
+    unless owns_note?(Note.find(params[:id]))
       render json: ['Permission denied: you do not own this note.'], status: 401
     end
   end

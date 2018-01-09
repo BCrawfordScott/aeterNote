@@ -12,7 +12,7 @@ const mapStateToProps = state => {
     {
       title: '',
       content: '',
-      notebook_id: Object.keys(state.notebooks).first
+      notebook_id: Object.keys(state.notebooks)[0]
     };
 
   return {

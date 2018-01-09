@@ -5,7 +5,9 @@ import NoteIndexItem from '../notes/note_index_item';
 
 
 class NotebookShow extends React.Component {
-
+  componentWillMount() {
+    console.log(this.props);
+  }
   componentDidMount() {
     this.props.fetchNotes();
   }

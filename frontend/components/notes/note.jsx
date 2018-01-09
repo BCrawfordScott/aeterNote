@@ -16,7 +16,6 @@ class QuillNote extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     this.setState({
       id: newProps.note.id,
       title: newProps.note.title,
@@ -29,7 +28,6 @@ class QuillNote extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state);
     if (this.props.note.id) {
       this.props.fetchNote(this.props.note.id);
     }
