@@ -62,11 +62,13 @@
 
   .note-item {
     // width: 95%;
+    box-sizing: border-box;
     height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    overflow: hidden;
+    padding-bottom: 20px;
 
     h5{
       display: flex;
@@ -89,7 +91,7 @@
 
 
           img {
-            margin: auto;
+            margin: 5px;
             height: 20px;
             width: 20px;
           }
@@ -103,17 +105,24 @@
       }
 
     }
-
-    p {
-      box-sizing: border-box;
-      padding: 25px 20px;
-      letter-spacing: 0.75px;
-      font-weight: 400;
-      font-size: 11px;
-      font-family: $sans-serif;
-      color: $EvernoteMediumDarkGray;
+    .note-content-container{
+      padding: 0 20px;
+      height: 50px;
       overflow: hidden;
-      // height: 40px;
+
+
+      .note-content {
+        position: relative;
+        box-sizing: border-box;
+        letter-spacing: 0.75px;
+        font-weight: 400;
+        font-size: 11px;
+        font-family: $sans-serif;
+        color: $EvernoteMediumDarkGray;
+        word-wrap: break-word;
+        overflow: hidden;
+        // height: 40px;
+      }
     }
 
   }
@@ -128,10 +137,13 @@
   .note-item:hover {
     background-color: $EvernoteGreen;
     cursor: pointer;
-    h5, p {
+    h5 {
       color: #fff;
     }
-    .button-notebook {
+    .note-content {
+      color: #fff;
+    }
+    .button-note {
       border: 2px solid $EvernoteGreen;
 
     }

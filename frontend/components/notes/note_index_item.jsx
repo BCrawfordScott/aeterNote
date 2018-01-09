@@ -16,13 +16,14 @@ class NoteIndexItem extends React.Component {
           <h5>
             {note.title}
             <div className='note-item-buttons'>
-              <button className='button-note'>
+              <div className='button-note'>
                 <img src={window.staticImages.whiteTrashCan} />
-              </button>
+              </div>
             </div>
           </h5>
-
-          <p>{note.content}</p>
+          <div className='note-content-container'>
+            <p className='note-content'>{note.content}</p>
+          </div>
         </li>
         <div className='bottom-border'></div>
       </div>

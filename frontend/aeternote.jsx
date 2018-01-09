@@ -27,14 +27,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={ store } />, root);
 });
-
-
-// var container = document.querySelector("#quill");
-// var quill = new Quill(container, {
-//   modules: {
-//     toolbar: true
-//   },
-//   theme: {
-//     snow: true
-//   }
-// });
