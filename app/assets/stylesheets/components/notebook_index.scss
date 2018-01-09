@@ -1,33 +1,35 @@
 
-.modal {
+.modalbg {
   position: absolute;
-  transition: all 2s ease;
-  -webkit-transition: all 2s ease; /** Chrome & Safari **/
-  -moz-transition: all 2s ease; /** Firefox **/
-  -o-transition: all 2s ease;
   float: left;
-  z-index: 9;
+  z-index: 3;
   top: 0;
   right: 0;
-  left: -389px;
+  left: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.90);
+  transition-delay: .4s;
 
 }
-.hide-notebook {
+
+
+.hide-modal-bg {
   display: none;
+  animation: fadeout .4s;
+  background-color: none;
 }
 
-.reveal-notebook{
-  transform: translate(460px, 0);
+.reveal-modal-bg {
+  animation: fadein .4s;
+  background-color: rgba(255, 255, 255, 0.90);
 }
 
 .notebooks {
   position:absolute;
   top: 0;
   bottom: 0;
+  left: -500px;
   float: left;
-  z-index: 10;
+  z-index: 5;
   flex: none;
   width: 457px;
   border-right: 3px solid $EvernoteMediumLightGray;
@@ -70,6 +72,17 @@
     overflow-y: scroll;
   }
 
+
+}
+.reveal-notebook{
+  animation: slidein .7s;
+  left: 71px;
+}
+
+.hide-notebook {
+  animation: slideout .7s;
+  left: -500px;
+  // visibility: hidden;
 
 }
 

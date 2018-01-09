@@ -17,3 +17,46 @@ $sans-serif: 'Raleway', sans-serif;
 .no-scroll {
   overflow: hidden;
 }
+
+.hide {
+  visibility: hidden;
+}
+
+@keyframes fadein {
+  0% {
+
+    opacity: 0;
+  }
+  100%{
+
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 100%
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes slidein {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 71px;
+  }
+}
+
+@keyframes slideout {
+  0% {
+    left: 71px;
+  }
+  100% {
+    left: -500px;
+  }
+}
