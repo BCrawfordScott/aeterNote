@@ -76,5 +76,12 @@
         cursor: pointer;
       }
     }
+
+    .notes-index {
+
+      .notebook-show-notes {
+        height: calc(100vh - 209px);
+      }
+    }
   }
 }

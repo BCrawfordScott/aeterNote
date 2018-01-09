@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateSelectedNote } from '../../actions/ui_actions';
+import {
+  updateSelectedNote,
+  updateNoteDeleteWarning
+} from '../../actions/ui_actions';
 
 
 class NoteIndexItem extends React.Component {
@@ -21,7 +24,8 @@ class NoteIndexItem extends React.Component {
           <h5>
             {note.title}
             <div className='note-item-buttons'>
-              <div className='button-note'>
+              <div className='button-note'
+                onClick={() => this.props.deleteWarning()}>
                 <img src={window.staticImages.whiteTrashCan} />
               </div>
             </div>
@@ -42,7 +46,8 @@ class NoteIndexItem extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateSelectedNote: noteId => dispatch(updateSelectedNote(noteId))
+    updateSelectedNote: noteId => dispatch(updateSelectedNote(noteId)),
+    deleteWarning: () => dispatch(updateNoteDeleteWarning())
   };
 };
 

@@ -5,6 +5,7 @@ export const UPDATE_SORT_OPTIONS = 'UPDATE_SORT_OPTIONS';
 export const UPDATE_EDIT_NOTEBOOK = 'UPDATE_EDIT_NOTEBOOK';
 export const UPDATE_DELETE_WARNING = 'UPDATE_DELETE_WARNING';
 export const UPDATE_SELECTED_NOTE = 'UPDATE_SELECTED_NOTE';
+export const UPDATE_NOTE_DELETE_WARNING = 'UPDATE_NOTE_DELETE_WARNING';
 
 export const updateNotebookTab = () => {
   return {
@@ -47,5 +48,11 @@ export const updateEditNotebook = () => {
    return {
      type: UPDATE_SELECTED_NOTE,
      noteId
+   };
+ };
+
+ export const updateNoteDeleteWarning = () => {
+   return {
+     type: UPDATE_NOTE_DELETE_WARNING
    };
  };

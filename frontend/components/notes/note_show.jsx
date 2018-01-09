@@ -1,11 +1,14 @@
 import React from 'react';
 import Note from './note_container';
+import NoteDeleteWarning from './note_delete_warning';
 
 class NoteShow extends React.Component {
   render () {
     return(
-
-          <Note />
+      <div>
+        <NoteDeleteWarning />
+        <Note />
+      </div>
 
 
     );

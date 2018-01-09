@@ -1,11 +1,19 @@
 .modal-holder {
   min-height: 100vh;
   min-width: 100vw;
-  
+
 }
 
 .hide-notebook-edit-form {
   display:none;
+}
+
+.hide-note-delete-warning {
+  display: none;
+}
+
+.reveal-note-delete-warning {
+  z-index: 15;
 }
 
 .form-modal {

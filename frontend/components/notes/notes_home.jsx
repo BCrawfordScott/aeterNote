@@ -17,6 +17,7 @@ const NoteHome = () => {
     <div className='modal-holder'>
       <CreateNotebook />
       <DeleteWarning />
+      
       <main className='notes-main'>
 
           <SideNav />

@@ -6,6 +6,11 @@ import NoteIndexItem from '../notes/note_index_item';
 
 class NotebookShow extends React.Component {
 
+  componentWillReceiveProps(newProps) {
+    console.log(newProps);
+    // this.setState({})
+  }
+
   componentDidMount() {
     this.props.fetchNotes();
   }
@@ -34,9 +39,10 @@ class NotebookShow extends React.Component {
             </div>
           </div>
           <div className='notes-index'>
-            <ul className='notes-ul'>
+            <ul className='notes-ul notebook-show-notes'>
               {
                 notes.map(note => {
+                  if(note)
                 return <NoteIndexItem
                           key={note.id}
                           note={note} />;

@@ -5,13 +5,18 @@ import {
   UPDATE_SORT_OPTIONS,
   UPDATE_EDIT_NOTEBOOK,
   UPDATE_DELETE_WARNING,
-  UPDATE_SELECTED_NOTE
+  UPDATE_SELECTED_NOTE,
+  UPDATE_NOTE_DELETE_WARNING
   } from '../actions/ui_actions';
 
 import {
   REMOVE_NOTEBOOK,
   RECEIVE_NOTEBOOK
 } from '../actions/notebook_actions';
+
+import {
+  REMOVE_NOTE
+} from '../actions/note_actions';
 
 const _defaultUi = {
   loading: false,
@@ -55,6 +60,10 @@ const uiReducer = (state = _defaultUi, action) => {
       return newState;
     case(RECEIVE_NOTEBOOK):
       return Object.assign(newState, { current_notebook: action.notebook.id});
+    case(UPDATE_NOTE_DELETE_WARNING):
+      return Object.assign(newState, { note_delete_warning: !(newState.note_delete_warning)});
+    case(REMOVE_NOTE):
+      return Object.assign(newState, { selected_note: false });
     default:
       return state;
   }
