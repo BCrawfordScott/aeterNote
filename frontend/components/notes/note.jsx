@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-
+import { merge } from 'lodash';
 
 class QuillNote extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.note;
-    this.state.saveAction = (this.props.note.id) ?
-        this.props.updateNote : this.props.createNote;
+    merge(this.state, {
+      saveAction: (this.props.note.id) ?
+          this.props.updateNote : this.props.createNote,
+      notebook_id: this.props.note.notebook_id
+    });
+
+
+
 
     this.update = this.update.bind(this);
     this.handleEditorChange = this.handleEditorChange.bind(this);
@@ -16,6 +22,7 @@ class QuillNote extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
+
     this.setState({
       id: newProps.note.id,
       title: newProps.note.title,
@@ -29,6 +36,7 @@ class QuillNote extends React.Component {
   }
 
   componentDidMount() {
+
     if (this.props.note.id) {
       this.props.fetchNote(this.props.note.id);
     }
@@ -54,6 +62,7 @@ class QuillNote extends React.Component {
       notebook_id: this.state.notebook_id,
     };
     this.state.saveAction(note);
+
   }
 
   render() {

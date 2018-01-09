@@ -5,11 +5,12 @@ import NotebookIndexItem from './notebook_index_item';
 class NotebookIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      hide: this.props.hide
-    };
+
   }
 
+  componentWillReceiveProps(newProps) {
+    
+  }
 
   componentDidMount() {
     this.props.fetchNotebooks();

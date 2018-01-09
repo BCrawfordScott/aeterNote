@@ -17,6 +17,7 @@ const mapStateToProps = state => {
     !(state.ui.current_notebook)) ? 'locked' : '';
   const noteCount = (notebook.note_ids) ? notebook.note_ids.length : 0;
   const notes = notebook.note_ids.map(noteId => state.notes[noteId]);
+  console.log(notes);
   return {
     notebook: notebook,
     noteCount: noteCount,

@@ -12,7 +12,8 @@ class NoteIndexItem extends React.Component {
   render(){
     const { note } = this.props;
     const selectNote = this.props.updateSelectedNote;
-    return(
+     if (note.id) {
+       return(
       <div className= 'notebook-item-container'>
         <li className='note-item'
           onClick={() => selectNote(note.id)}>
@@ -32,6 +33,9 @@ class NoteIndexItem extends React.Component {
         <div className='bottom-border'></div>
       </div>
     );
+  } else {
+    return null;
+  }
   }
 }
 

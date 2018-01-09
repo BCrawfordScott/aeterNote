@@ -7,13 +7,15 @@ import {
 } from '../../actions/note_actions';
 
 const mapStateToProps = state => {
+
   const note = (state.ui.selected_note) ?
     state.notes[state.ui.selected_note] :
     {
       title: '',
       content: '',
       plain_text: '',
-      notebook_id: Object.keys(state.notebooks)[0]
+      notebook_id: (state.ui.current_notebook) ?
+        state.ui.current_notebook : Object.keys(state.notebooks)[0]
     };
 
   return {

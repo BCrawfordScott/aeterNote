@@ -4,6 +4,7 @@ import {
   REMOVE_NOTEBOOK
 } from '../actions/notebook_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_NOTE } from '../actions/note_actions';
 
 const _nullNotebooks = {};
 
@@ -18,8 +19,11 @@ const notebookReducer = (state = _nullNotebooks, action) => {
     case(REMOVE_NOTEBOOK):
       delete newState[action.notebookId];
       return newState;
-    // case(RECEIVE_CURRENT_USER):
-    //   return action.notebooks;
+    case(RECEIVE_NOTE):
+      console.log(newState);
+      newState[action.note.notebook_id].note_ids.push(action.note.id);
+      console.log(newState);
+      return newState;
     default:
       return newState;
   }
