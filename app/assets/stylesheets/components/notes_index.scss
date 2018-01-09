@@ -55,12 +55,12 @@
 
   .notes-ul {
     display:block;
-    z-index: 1;
     height: calc(100vh - 124px);
     overflow-y: scroll;
   }
 
   .note-item {
+    z-index: 1;
     // width: 95%;
     box-sizing: border-box;
     height: 120px;

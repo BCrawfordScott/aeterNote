@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { updateSelectedNote } from '../../actions/ui_actions';
 
 
 class NoteIndexItem extends React.Component {
@@ -9,9 +11,11 @@ class NoteIndexItem extends React.Component {
 
   render(){
     const { note } = this.props;
+    const selectNote = this.props.updateSelectedNote;
     return(
       <div className= 'notebook-item-container'>
-        <li className='note-item'>
+        <li className='note-item'
+          onClick={() => selectNote(note.id)}>
 
           <h5>
             {note.title}
@@ -30,6 +34,12 @@ class NoteIndexItem extends React.Component {
     );
   }
 }
-// <h5>this.props.title</h5>
 
-export default NoteIndexItem;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateSelectedNote: noteId => dispatch(updateSelectedNote(noteId))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(NoteIndexItem);

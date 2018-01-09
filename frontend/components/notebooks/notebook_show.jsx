@@ -14,7 +14,6 @@ class NotebookShow extends React.Component {
     const { notebook } = this.props;
     const { noteCount } = this.props;
     const notes = (this.props.notes[0]) ? this.props.notes : [{id: ''}];
-    console.log(notes);
     return(
       <div className={`${this.props.revealShow}`}>
 

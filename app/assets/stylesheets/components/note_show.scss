@@ -1,0 +1,51 @@
+
+.note-show {
+  display: flex;
+  flex-direction:column;
+  align-content:center;
+  width: 100%;
+
+  .title-save {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 85%;
+    align-self: center;
+    .note-title-edit {
+      width: 300px;
+      height: 44px;
+      font-family: $serif;
+      font-size: 32px;
+      color: $EvernoteGreen;
+      font-weight: 200;
+    }
+
+    .note-title-edit::placeholder {
+      color: $EvernoteMediumGray;
+    }
+
+    .save-button {
+      font-size: 13.5px;
+      color: #fff;
+      border: 1px solid $EvernoteGreen;
+      border-radius: 5px;
+      background-color: $EvernoteGreen;
+      height: 25px;
+      padding: 0 5px;
+
+    }
+    .save-button:hover {
+      cursor: pointer;
+      background-color: $EvernoteHoverGreen;
+
+    }
+  }
+
+  .quill {
+    align-self: center;
+    width: 90%;
+    height: calc(95vh - 400px);
+    padding: 0 30px;
+  }
+}

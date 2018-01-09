@@ -5,7 +5,7 @@ import CreateNotebook from '../notebooks/create_notebook_form_container';
 import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
-
+import NoteShow from '../notes/note_show';
 
 
 const NoteBookHome = () => {
@@ -18,22 +18,15 @@ const NoteBookHome = () => {
 
           <SideNav />
 
-        <div className='note-box'>
+
 
 
           <Notebooks />
           <NotebookShow />
           <div className='under-construction'>
-            <img className='logo' src={window.staticImages.logoMain} />
-            <article>
-              <p>Tibi gratias ago pro cum stetissent iuxta!</p>
-              <p>-Thanks for stopping by!</p>
-              <p>Check back soon for more elephantastic-features!</p></article>
-
-              <div>
-              </div>
+            <NoteShow />
           </div>
-        </div>
+
       </main>
     </div>
   );

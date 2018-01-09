@@ -4,7 +4,8 @@ import {
   UPDATE_NOTEBOOK_SELECTED,
   UPDATE_SORT_OPTIONS,
   UPDATE_EDIT_NOTEBOOK,
-  UPDATE_DELETE_WARNING
+  UPDATE_DELETE_WARNING,
+  UPDATE_SELECTED_NOTE
   } from '../actions/ui_actions';
 
 import {
@@ -45,6 +46,8 @@ const uiReducer = (state = _defaultUi, action) => {
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       Object.assign(newState, { edit_notebook: false });
       return newState;
+    case(UPDATE_SELECTED_NOTE):
+      return Object.assign(newState, { selected_note: action.noteId });
     case(REMOVE_NOTEBOOK):
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       Object.assign(newState, { current_notebook: false });
