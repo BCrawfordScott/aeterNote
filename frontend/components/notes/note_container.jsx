@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Note from './Note';
+import Note from './note';
 import {
   updateNote,
   createNote,
