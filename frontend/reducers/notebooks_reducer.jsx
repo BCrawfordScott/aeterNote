@@ -23,7 +23,9 @@ const notebookReducer = (state = _nullNotebooks, action) => {
       delete newState[action.notebookId];
       return newState;
     case(RECEIVE_NOTE):
-      newState[action.note.notebook_id].note_ids.push(action.note.id);
+      if (!newState[action.note.notebook_id].note_ids.includes(action.note.id)) {
+        newState[action.note.notebook_id].note_ids.push(action.note.id);
+      }
       return newState;
     case(REMOVE_NOTE):
       // const index = newState[action.note.notebook_id].note_ids.indexOf(action.note.id);
