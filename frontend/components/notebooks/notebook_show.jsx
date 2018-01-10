@@ -8,7 +8,7 @@ class NotebookShow extends React.Component {
 
   componentWillReceiveProps(newProps) {
     console.log(newProps);
-    // this.setState({})
+    this.setState({ noteCount: newProps.noteCount });
   }
 
   componentDidMount() {

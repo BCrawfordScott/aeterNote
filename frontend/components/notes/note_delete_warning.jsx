@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateNoteDeleteWarning } from '../../actions/ui_actions';
 import { deleteNote } from '../../actions/note_actions';
+import { fetchNotebooks } from '../../actions/notebook_actions';
 
 class NoteDelete extends React.Component {
   constructor(props){
@@ -15,7 +16,10 @@ class NoteDelete extends React.Component {
     e.preventDefault();
     const note = Object.assign({}, this.state);
     this.props.processForm(this.props.id).then(
-      newNote => this.props.deleteWarning()
+      newNote => {
+        this.props.fetchNotebooks();
+        this.props.deleteWarning();
+      }
     );
   }
 
@@ -73,7 +77,8 @@ const mapStateToProps = state => {
 const mapDisptachToProps = dispatch => {
   return {
     deleteWarning: () => dispatch(updateNoteDeleteWarning()),
-    processForm: id => dispatch(deleteNote(id))
+    processForm: id => dispatch(deleteNote(id)),
+    fetchNotebooks: () => dispatch(fetchNotebooks())
   };
 };
 
