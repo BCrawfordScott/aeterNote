@@ -13,10 +13,11 @@
     width: 100%;
 
     .action-tools {
+      width: 100%;
       display: flex;
       align-self: flex-start;
-      justify-content: space-between;
       margin-bottom: 15px;
+      align-items: center;
       .delete-note-trash {
         height: 35px;
         width: 35px;
@@ -26,7 +27,7 @@
         background-size: 65%;
         background-repeat: no-repeat;
         background-position: center center;
-        margin: auto;
+
         border-radius: 50%;
       }
 
@@ -34,15 +35,37 @@
         height: 35px;
         width: 35px;
         background-color: #fff;
-        // border: 2px solid $EvernoteGreen;
+        cursor: pointer;
         background: image-url('trash_can_green.png');
         background-size: 65%;
         background-repeat: no-repeat;
         background-position: center center;
-        margin: auto;
+
         border-radius: 50%;
         transition: border .35s;
 
+      }
+
+      .notebook-select {
+        color: $EvernoteElephantGray;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding: 2px 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        margin-left: 20px;
+        border: 1px solid $EvernoteMediumGray;
+        img {
+          margin-left: 4px;
+          display: inline;
+          height: 8px;
+          width: 8px;
+        }
+      }
+
+      .notebook-select:hover {
+        background-color: $EvernoteMediumGray;
+        cursor: pointer;
       }
     }
 

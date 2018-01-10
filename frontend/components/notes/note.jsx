@@ -76,6 +76,7 @@ class QuillNote extends React.Component {
           </div>
           <div className='notebook-select'>
             {this.props.notebook.title}
+            <img src={window.staticImages.downArrow}/>
           </div>
         </div>
         <div className='title-save'>
