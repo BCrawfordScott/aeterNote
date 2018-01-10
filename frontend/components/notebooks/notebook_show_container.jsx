@@ -11,7 +11,7 @@ const mapStateToProps = state => {
   const revealSort = (state.ui.sort_options) ? "reveal-sort" : "hide-sort";
   const notebook = (state.notebooks[state.ui.current_notebook]) ?
     state.notebooks[state.ui.current_notebook] :
-    {title: ''};
+    {title: '', note_ids:[]};
   const locked = (
     Object.values(state.notebooks).length === 0 ||
     !(state.ui.current_notebook)) ? 'locked' : '';
