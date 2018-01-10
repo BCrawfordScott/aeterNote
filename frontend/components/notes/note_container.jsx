@@ -5,10 +5,13 @@ import {
   createNote,
   fetchNote
 } from '../../actions/note_actions';
-import { updateNoteDeleteWarning } from '../../actions/ui_actions';
+import {
+  updateNoteDeleteWarning,
+  updateNotebookSelector
+ } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
-  console.log(state.notebooks);
+
   const note = (state.ui.selected_note) ?
     state.notes[state.ui.selected_note] :
     {
@@ -21,10 +24,13 @@ const mapStateToProps = state => {
   const notebook = state.notebooks[note.notebook_id] ?
     state.notebooks[note.notebook_id] : { title: '' };
   const notebooks = Object.values(state.notebooks);
+  const revealSelector = state.ui.notebook_selector ?
+    "reveal-notebook-selector" : "hide-notebook-selector";
   return {
     note: note,
     notebook: notebook,
-    notebooks: notebooks
+    notebooks: notebooks,
+    revealSelector: revealSelector
   };
 };
 
@@ -34,6 +40,7 @@ const mapDispatchToProps = (dispatch) => {
     createNote: note => dispatch(createNote(note)),
     fetchNote: noteId => dispatch(fetchNote(noteId)),
     deleteWarning: () => dispatch(updateNoteDeleteWarning()),
+    notebookSelector: () => dispatch(updateNotebookSelector())
   };
 };
 

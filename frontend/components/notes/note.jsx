@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import { merge } from 'lodash';
+import NotebookSelect from './notebook_selector';
 
 class QuillNote extends React.Component {
   constructor(props) {
@@ -65,7 +66,6 @@ class QuillNote extends React.Component {
   }
 
   render() {
-    console.log(this.props.notebook);
     return (
 
     <main className='note-new-edit'>
@@ -74,9 +74,13 @@ class QuillNote extends React.Component {
           <div className='delete-note-trash'
             onClick={() => this.props.deleteWarning()}>
           </div>
-          <div className='notebook-select'>
-            {this.props.notebook.title}
-            <img src={window.staticImages.downArrow}/>
+          <div className='notebook-select-modal-holder'>
+            <div className='notebook-select'
+              onClick={() => this.props.notebookSelector()}>
+              {this.props.notebook.title}
+              <img src={window.staticImages.downArrow}/>
+            </div>
+            <NotebookSelect reveal={this.props.revealSelector} notebooks={this.props.notebooks}/>
           </div>
         </div>
         <div className='title-save'>

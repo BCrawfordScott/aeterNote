@@ -6,7 +6,8 @@ import {
   UPDATE_EDIT_NOTEBOOK,
   UPDATE_DELETE_WARNING,
   UPDATE_SELECTED_NOTE,
-  UPDATE_NOTE_DELETE_WARNING
+  UPDATE_NOTE_DELETE_WARNING,
+  UPDATE_NOTEBOOK_SELECTOR
   } from '../actions/ui_actions';
 
 import {
@@ -37,11 +38,14 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_NOTEBOOK_TAB):
       return Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
     case(UPDATE_NOTEBOOK_FORM_MODAL):
-      return Object.assign(newState, { notebook_form_modal: !(newState.notebook_form_modal) });
+      Object.assign(newState, { notebook_form_modal: !(newState.notebook_form_modal) });
+      if (newState.notebook_selector) { Object.assign(newState, { notebook_selector: false }); }
+      return newState;
     case(UPDATE_NOTEBOOK_SELECTED):
       Object.assign(newState, { current_notebook: action.notebookId });
       Object.assign(newState, { notebook_selected: Boolean(newState.current_notebook) });
       Object.assign(newState, { selected_note: false });
+      if (newState.notebook_selector) { Object.assign(newState, { notebook_selector: false }); }
       return newState;
     case(UPDATE_SORT_OPTIONS):
       return Object.assign(newState, { sort_options: !(newState.sort_options) });
@@ -64,6 +68,8 @@ const uiReducer = (state = _defaultUi, action) => {
       return Object.assign(newState, { note_delete_warning: !(newState.note_delete_warning)});
     case(REMOVE_NOTE):
       return Object.assign(newState, { selected_note: false });
+    case(UPDATE_NOTEBOOK_SELECTOR):
+      return Object.assign(newState, { notebook_selector: !(newState.notebook_selector)});
     default:
       return state;
   }
