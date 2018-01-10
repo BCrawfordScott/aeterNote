@@ -15,8 +15,8 @@ class Api::TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     @tag.user_id = current_user.id
     if @tag.save
-      if tag_params.note_id
-        Tagging.create(note_id: tag_params.note_id, tag_id: @tag.id)
+      if params[:note_id]
+        Tagging.create(note_id: params[:note_id], tag_id: @tag.id)
       end
       render :show
     else
@@ -44,7 +44,7 @@ class Api::TagsController < ApplicationController
 private
 
 def tag_params
-  params.require(:tag).permit(:label, :note_id)
+  params.require(:tag).permit(:label, :user_id)
 end
 
 def owns_tag?(tag)
@@ -52,7 +52,7 @@ def owns_tag?(tag)
 end
 
 def proper_ownership
-  unless owns_tag?(tag.find(params[:id]))
+  unless owns_tag?(Tag.find(params[:id]))
     render json: ['Permission denied: you do not own these tags'], status: 401
   end
 end

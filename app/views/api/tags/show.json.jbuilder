@@ -1,1 +1,1 @@
-json.extract! note, :id, :label, :user_id
+json.partial! 'api/tags/tag', tag: @tag
