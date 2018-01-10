@@ -5,6 +5,7 @@ import {
   createNote,
   fetchNote
 } from '../../actions/note_actions';
+import { updateNoteDeleteWarning } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
 
@@ -17,9 +18,12 @@ const mapStateToProps = state => {
       notebook_id: (state.ui.current_notebook) ?
         state.ui.current_notebook : Object.keys(state.notebooks)[0]
     };
-
+  const notebook = state.notebooks[note.notebook_id];
+  const notebooks = Object.values(state.notebooks);
   return {
-    note: note
+    note: note,
+    notebook: notebook,
+    notebooks: notebooks
   };
 };
 
@@ -27,7 +31,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateNote: note => dispatch(updateNote(note)),
     createNote: note => dispatch(createNote(note)),
-    fetchNote: noteId => dispatch(fetchNote(noteId))
+    fetchNote: noteId => dispatch(fetchNote(noteId)),
+    deleteWarning: () => dispatch(updateNoteDeleteWarning()),
   };
 };
 

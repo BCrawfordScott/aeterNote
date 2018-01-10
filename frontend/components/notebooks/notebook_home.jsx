@@ -23,7 +23,7 @@ const NoteBookHome = () => {
 
           <Notebooks />
           <NotebookShow />
-          <div className='under-construction'>
+          <div className=' note-show-wrapper'>
             <NoteShow />
           </div>
 

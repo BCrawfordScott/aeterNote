@@ -1,0 +1,110 @@
+
+
+.note-new-edit {
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .note-show {
+    display: flex;
+    flex-direction:column;
+    align-content:center;
+    width: 100%;
+
+    .action-tools {
+      display: flex;
+      align-self: flex-start;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      .delete-note-trash {
+        height: 35px;
+        width: 35px;
+        background-color: #fff;
+        border: 2px solid #fff;
+        background: image-url('trash_gray.png');
+        background-size: 65%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: auto;
+        border-radius: 50%;
+      }
+
+      .delete-note-trash:hover {
+        height: 35px;
+        width: 35px;
+        background-color: #fff;
+        // border: 2px solid $EvernoteGreen;
+        background: image-url('trash_can_green.png');
+        background-size: 65%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: auto;
+        border-radius: 50%;
+        transition: border .35s;
+
+      }
+    }
+
+    .title-save {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      width: 100%;
+      align-self: center;
+      border-top: 1px solid $EvernoteMediumGray;
+
+      .note-title-edit {
+
+        width: 300px;
+        height: 40px;
+        font-family: $serif;
+        font-size: 28px;
+        color: $EvernoteGreen;
+        font-weight: 200;
+      }
+
+      .note-title-edit::placeholder {
+        color: $EvernoteMediumGray;
+      }
+
+      .save-button {
+        font-size: 16px;
+        color: #fff;
+        border: 1px solid $EvernoteGreen;
+        border-radius: 5px;
+        background-color: $EvernoteGreen;
+        height: 40px;
+        width: 100px;
+        padding: 0 10px;
+        text-align: center;
+
+      }
+      .save-button:hover {
+        cursor: pointer;
+        background-color: $EvernoteHoverGreen;
+
+      }
+    }
+  }
+}
+
+
+
+
+.quill {
+  width: calc(100vw - 480px);
+  min-width: 800px;
+  align-self: center;
+  .ql-toolbar {
+    border: none;
+    border-bottom: 1px solid $EvernoteMediumGray;
+  }
+
+  .ql-container {
+    border: none;
+    height: calc(100vh - 190px);
+    overflow: auto;
+  }
+}

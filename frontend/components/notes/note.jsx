@@ -12,9 +12,6 @@ class QuillNote extends React.Component {
       notebook_id: this.props.note.notebook_id
     });
 
-
-
-
     this.update = this.update.bind(this);
     this.handleEditorChange = this.handleEditorChange.bind(this);
     this.handleSaveAction = this.handleSaveAction.bind(this);
@@ -28,7 +25,9 @@ class QuillNote extends React.Component {
       title: newProps.note.title,
       content: newProps.note.content,
       plain_text: newProps.note.plain_text,
-      notebook_id: newProps.note.notebook_id
+      notebook_id: newProps.note.notebook_id,
+      notebook: newProps.notebook,
+      notebooks: newProps.notebooks
     });
     this.setState((newProps.note.id) ?
         { saveAction: newProps.updateNote } :
@@ -70,12 +69,20 @@ class QuillNote extends React.Component {
 
     <main className='note-new-edit'>
       <form className='note-show'>
+        <div className='action-tools'>
+          <div className='delete-note-trash'
+            onClick={() => this.props.deleteWarning()}>
+          </div>
+          <div className='notebook-select'>
+            {this.props.notebook.title}
+          </div>
+        </div>
         <div className='title-save'>
           <input className='note-title-edit'
             type='text'
             value={this.state.title}
             onChange={this.update('title')}
-            placeholder="Title"/>
+            placeholder="Title your new note"/>
           <button className="notebook-button save-button"
             onClick={(e) => {
               e.preventDefault();

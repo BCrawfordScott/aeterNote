@@ -5,7 +5,7 @@ import NoteDeleteWarning from './note_delete_warning';
 class NoteShow extends React.Component {
   render () {
     return(
-      <div>
+      <div className='note-modal-wrapper'>
         <NoteDeleteWarning />
         <Note />
       </div>
