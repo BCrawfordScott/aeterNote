@@ -8,7 +8,7 @@ import {
 import { updateNoteDeleteWarning } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
-
+  console.log(state.notebooks);
   const note = (state.ui.selected_note) ?
     state.notes[state.ui.selected_note] :
     {
@@ -18,7 +18,8 @@ const mapStateToProps = state => {
       notebook_id: (state.ui.current_notebook) ?
         state.ui.current_notebook : Object.keys(state.notebooks)[0]
     };
-  const notebook = state.notebooks[note.notebook_id];
+  const notebook = state.notebooks[note.notebook_id] ?
+    state.notebooks[note.notebook_id] : { title: '' };
   const notebooks = Object.values(state.notebooks);
   return {
     note: note,

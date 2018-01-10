@@ -65,6 +65,7 @@ class QuillNote extends React.Component {
   }
 
   render() {
+    console.log(this.props.notebook);
     return (
 
     <main className='note-new-edit'>
