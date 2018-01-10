@@ -9,4 +9,9 @@
 #
 
 class Tag < ApplicationRecord
+  validates :label, uniqueness: true, presence: true
+
+  has_many :taggings
+
+  has_many :notes, through: :taggings
 end
