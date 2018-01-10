@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   has_many :notebooks, dependent: :destroy
   has_many :notes, dependent: :destroy
-
+  has_many :tags, dependent: :destroy
   attr_reader :password
 
   after_initialize :ensure_session_token
