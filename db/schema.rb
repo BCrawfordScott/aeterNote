@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109202352) do
+ActiveRecord::Schema.define(version: 20180110185331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,20 @@ ActiveRecord::Schema.define(version: 20180109202352) do
     t.string "plain_text"
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
+  create_table "taggings", id: false, force: :cascade do |t|
+    t.integer "note_id", null: false
+    t.integer "tag_id", null: false
+    t.index ["note_id", "tag_id"], name: "index_taggings_on_note_id_and_tag_id", unique: true
+    t.index ["tag_id", "note_id"], name: "index_taggings_on_tag_id_and_note_id", unique: true
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "label", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["label"], name: "index_tags_on_label", unique: true
   end
 
   create_table "users", force: :cascade do |t|
