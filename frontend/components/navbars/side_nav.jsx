@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateSelectedNote } from '../../actions/ui_actions';
 
 class SideNav extends React.Component {
 
@@ -7,20 +9,29 @@ class SideNav extends React.Component {
     return(
       <nav className='side-nav'>
         <div className='note-buttons'>
-          <button
-            className='notebooks-button'
+          <div className='side-nav-button note-new-button'
+            onClick={() => {
+              this.props.newNote();
+              this.props.history.push('/notes');
+            }}>
+          </div>
+          <div className='side-nav-button notebooks-button'
             onClick={() => this.props.updateNotebookTab()}>
-            <img src={window.staticImages.notebookIcon}/>
-          </button>
-          <div className='note-index-button'
+          </div>
+          <div className='side-nav-button note-index-button'
             onClick={() => this.props.history.push('/notes')}>
           </div>
         </div>
-
         <button className='logout-button' onClick={() => this.props.logout()}>Logout</button>
       </nav>
     );
   }
 }
 
-export default withRouter(SideNav);
+const mapDispatchToProps = dispatch => {
+  return {
+    newNote: () => dispatch(updateSelectedNote(false))
+  };
+};
+
+export default withRouter(connect(null, mapDispatchToProps)(SideNav));
