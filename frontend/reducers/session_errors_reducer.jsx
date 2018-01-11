@@ -3,6 +3,7 @@ import {
   RECEIVE_CURRENT_USER,
   REMOVE_SESSION_ERRORS
 } from '../actions/session_actions';
+import { LOGOUT } from '../actions/session_actions';
 
 const sessionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
@@ -12,6 +13,7 @@ const sessionErrorsReducer = (state = [], action) => {
     case(RECEIVE_CURRENT_USER):
       return [];
     case(REMOVE_SESSION_ERRORS):
+    case(LOGOUT):
       return [];
     default:
       return state;

@@ -4,6 +4,7 @@ import {
   RECEIVE_TAGS,
   REMOVE_TAG
 } from '../actions/note_actions';
+import { LOGOUT } from '../actions/session_actions';
 
 const tagsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -16,6 +17,8 @@ const tagsReducer = (state = {}, action) => {
     case(REMOVE_TAG):
       delete newState[action.tagId];
       return newState;
+    case(LOGOUT):
+      return {};
     default:
       return newState;
   }

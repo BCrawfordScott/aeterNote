@@ -4,6 +4,7 @@ import {
   RECEIVE_TAGGING_ERRORS,
   REMOVE_TAGGING_ERRORS
 } from '../actions/tag_actions';
+import { LOGOUT } from '../actions/session_actions';
 
 const taggingsReducer = (state = [], action) => {
 
@@ -17,6 +18,8 @@ const taggingsReducer = (state = [], action) => {
       return action.tagging;
     case(REMOVE_TAGGING):
       return action.tagging;
+    case(LOGOUT):
+      return [];
     default:
       return state;
   }

@@ -8,6 +8,7 @@ import {
   RECEIVE_NOTE,
   REMOVE_NOTE
 } from '../actions/note_actions';
+import { LOGOUT } from '../actions/session_actions';
 
 const _nullNotebooks = {};
 
@@ -31,6 +32,8 @@ const notebookReducer = (state = _nullNotebooks, action) => {
       // const index = newState[action.note.notebook_id].note_ids.indexOf(action.note.id);
       // newState[action.note.notebook_id].note_ids.slice(index, 1);
       return newState;
+    case(LOGOUT):
+      return {};
     default:
       return newState;
   }

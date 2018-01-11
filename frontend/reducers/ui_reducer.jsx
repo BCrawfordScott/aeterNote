@@ -19,6 +19,8 @@ import {
   REMOVE_NOTE
 } from '../actions/note_actions';
 
+import { LOGOUT } from '../actions/session_actions';
+
 const _defaultUi = {
   loading: false,
   fullpage_note: false,
@@ -70,6 +72,8 @@ const uiReducer = (state = _defaultUi, action) => {
       return Object.assign(newState, { selected_note: false });
     case(UPDATE_NOTEBOOK_SELECTOR):
       return Object.assign(newState, { notebook_selector: !(newState.notebook_selector)});
+    case(LOGOUT):
+      return {};
     default:
       return state;
   }
