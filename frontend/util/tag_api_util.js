@@ -43,7 +43,7 @@ export const addTagging = tagging => {
   });
 };
 
-export const removeTagging = tagging => {
+export const deleteTagging = tagging => {
   return $.ajax({
     method: "DELETE",
     url: 'api/add_tagging',
