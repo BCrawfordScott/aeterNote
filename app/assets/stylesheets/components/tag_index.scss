@@ -1,3 +1,16 @@
+
+.tagmodalbg {
+  position: absolute;
+  float: left;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition-delay: .4s;
+
+}
+
 .hide-tag-modal-bg {
   display: none;
   animation: fadeout .4s;
