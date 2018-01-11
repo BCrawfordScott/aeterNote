@@ -20,6 +20,7 @@ import {
 } from '../actions/notebook_actions';
 
 import {
+  RECEIVE_NOTE,
   REMOVE_NOTE
 } from '../actions/note_actions';
 
@@ -66,6 +67,8 @@ const uiReducer = (state = _defaultUi, action) => {
       return newState;
     case(UPDATE_SELECTED_NOTE):
       return Object.assign(newState, { selected_note: action.noteId });
+    case(RECEIVE_NOTE):
+      return Object.assign(newState, { selected_note: action.note.id });
     case(REMOVE_NOTEBOOK):
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       Object.assign(newState, { current_notebook: false });
