@@ -7,6 +7,7 @@ import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
 import Notebooks from '../notebooks/notebooks_index_container';
 import NoteShow from './note_show';
+import Tags from '../tags/tags_index_container';
 // import ReactQuill from 'react-quill';
 
 
@@ -31,6 +32,7 @@ class NoteHome extends React.Component {
 
           <Notes />
           <Notebooks />
+          <Tags />
 
           <div className=' note-show-wrapper'>
             <NoteShow />

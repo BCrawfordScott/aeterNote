@@ -1,4 +1,5 @@
 import React from 'react';
+import TagIndexItem from './tags_index_item';
 
 
 
@@ -28,7 +29,7 @@ class TagsIndex extends React.Component {
 
     return (
       <div >
-        <div className={`modalbg ${revealModal}`} id='tags'
+        <div className={`tagmodalbg ${revealModal}`} id='tags'
           onClick={() => tagTab() }>
           <div className={`tags ${reveal}` }>
 
@@ -40,7 +41,11 @@ class TagsIndex extends React.Component {
             </header>
 
             <ul className= 'tags-ul'>
-
+                {tags.map(tag => {
+                  return <TagIndexItem
+                            key={tag.id}
+                            tag={tag} />;
+                })}
               </ul>
             </div>
           </div>

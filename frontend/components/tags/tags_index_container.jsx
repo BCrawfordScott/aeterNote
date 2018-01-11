@@ -12,37 +12,37 @@ import {
   updateTagDeleteWarning,
   updateTagTab
  } from '../../actions/ui_actions';
-import NotebookIndex from './notebooks_index';
+import TagsIndex from './tags_index';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   let revealIndex;
-    if (state.ui.notebook_tab === null ) {
+    if (state.ui.tag_tab === null ) {
       revealIndex = "hidden";
-    } else if (state.ui.notebook_tab) {
-      revealIndex = "reveal-notebook";
+    } else if (state.ui.tag_tab) {
+      revealIndex = "reveal-tag-index";
     } else {
-      revealIndex = "hide-notebook";
+      revealIndex = "hide-tag-index";
     }
-  const revealModal = (state.ui.notebook_tab) ? "reveal-modal-bg" : "hide-modal-bg";
+  const revealModal = (state.ui.tag_tab) ? "reveal-tag-modal-bg" : "hide-tag-modal-bg";
 
 
   return {
     reveal: revealIndex,
     revealModal: revealModal,
-    notebooks: Object.values(state.notebooks),
+    tags: Object.values(state.tags),
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchNotebooks: () => dispatch(fetchNotebooks()),
-    updateNotebookFormModal: () => dispatch(updateNotebookFormModal()),
-    updateNotebookSelected: notebookId => dispatch(updateNotebookSelected(notebookId)),
-    deleteWarning: () => dispatch(updateDeleteWarning()),
-    notebookTab: () => dispatch(updateNotebookTab()),
+    fetchTags: () => dispatch(fetchTags()),
+    updateTagFormModal: () => dispatch(updateTagFormModal()),
+    updateTagSelected: notebookId => dispatch(updateTagSelected(notebookId)),
+    deleteWarning: () => dispatch(updateTagDeleteWarning()),
+    tagTab: () => dispatch(updateTagTab()),
   };
 };
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NotebookIndex));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TagsIndex));

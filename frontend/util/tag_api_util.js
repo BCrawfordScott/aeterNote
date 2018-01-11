@@ -1,14 +1,14 @@
 export const fetchTags = () => {
   return $.ajax({
     method: "GET",
-    url: "api/Tags"
+    url: "api/tags"
   });
 };
 
 export const fetchTag = id => {
   return $.ajax({
     method: "GET",
-    url: `api/Tags/${id}`
+    url: `api/tags/${id}`
   });
 };
 

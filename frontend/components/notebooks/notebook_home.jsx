@@ -6,6 +6,8 @@ import UpdateNotebook from '../notebooks/update_notebook_form_container';
 import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
 import NoteShow from '../notes/note_show';
+import Tags from '../tags/tags_index_container';
+
 
 
 const NoteBookHome = () => {
@@ -23,6 +25,7 @@ const NoteBookHome = () => {
 
           <Notebooks />
           <NotebookShow />
+          <Tags />
           <div className=' note-show-wrapper'>
             <NoteShow />
           </div>

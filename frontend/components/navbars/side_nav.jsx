@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateSelectedNote } from '../../actions/ui_actions';
+
 
 class SideNav extends React.Component {
 
@@ -35,6 +35,9 @@ class SideNav extends React.Component {
           <div className='side-nav-button note-index-button'
             onClick={() => this.props.history.push('/notes')}>
           </div>
+          <div className='side-nav-button tag-index-button'
+            onClick={() => this.props.updateTagTab()}>
+          </div>
         </div>
         <button className='logout-button' onClick={() => this.props.logout()}>Logout</button>
       </nav>
@@ -42,10 +45,5 @@ class SideNav extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    newNote: () => dispatch(updateSelectedNote(false))
-  };
-};
 
-export default withRouter(connect(null, mapDispatchToProps)(SideNav));
+export default withRouter(SideNav);
