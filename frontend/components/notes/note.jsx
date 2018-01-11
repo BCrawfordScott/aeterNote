@@ -21,7 +21,7 @@ class QuillNote extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    // debugger
+    //
     if(newProps.note.id !== this.props.note.id)
     {this.setState({
       id: newProps.note.id,
@@ -63,24 +63,22 @@ class QuillNote extends React.Component {
       plain_text: this.state.plain_text,
       notebook_id: this.state.notebook_id,
     };
-    this.state.saveAction(note);
+    this.state.saveAction(note).then(
+      () => this.props.resetNotebooks()
+    );
 
   }
 
   collectNotebook(notebookId) {
-    debugger
-    // console.log(notebookId);
-    this.setState({ notebook_id: notebookId }, () => {
-      debugger
-      console.log(this.state.notebook_id);
 
-    });
-    // this.forceUpdate();
+
+    this.setState({ notebook_id: notebookId });
+
 
   }
 
   render() {
-    debugger
+
     return (
 
     <main className='note-new-edit'>

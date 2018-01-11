@@ -5,6 +5,12 @@ import NoteIndexItem from '../notes/note_index_item';
 
 
 class NotebookShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      noteCount: this.props.noteCount
+    };
+  }
 
   componentWillReceiveProps(newProps) {
     console.log(newProps);

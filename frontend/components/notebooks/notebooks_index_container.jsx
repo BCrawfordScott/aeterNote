@@ -26,10 +26,11 @@ const mapStateToProps = state => {
     }
   const revealModal = (state.ui.notebook_tab) ? "reveal-modal-bg" : "hide-modal-bg";
 
+
   return {
     reveal: revealIndex,
     revealModal: revealModal,
-    notebooks: Object.values(state.notebooks)
+    notebooks: Object.values(state.notebooks),
   };
 };
 

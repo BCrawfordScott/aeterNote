@@ -9,7 +9,7 @@ class NotebookIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-
+    // this.forceUpdate();
   }
 
   componentDidMount() {
@@ -25,7 +25,8 @@ class NotebookIndex extends React.Component {
     const { updateNotebookSelected } = this.props;
     const { deleteWarning } = this.props;
     const { notebookTab } = this.props;
-    return(
+
+    return (
       <div >
         <div className={`modalbg ${revealModal}`} id='notebooks'
           onClick={() => notebookTab() }>

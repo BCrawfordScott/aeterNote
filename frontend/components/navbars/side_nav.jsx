@@ -20,7 +20,6 @@ class SideNav extends React.Component {
   // }
 
   render() {
-    debugger
     return(
       <nav className='side-nav'>
         <div className='note-buttons'>

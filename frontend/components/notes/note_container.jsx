@@ -10,8 +10,11 @@ import {
   updateNotebookSelector
  } from '../../actions/ui_actions';
 
+ import {
+   fetchNotebooks
+ } from '../../actions/notebook_actions';
+
 const mapStateToProps = state => {
-  debugger
   const note = (state.ui.selected_note) ?
     state.notes[state.ui.selected_note] :
     {
@@ -40,7 +43,8 @@ const mapDispatchToProps = (dispatch) => {
     createNote: note => dispatch(createNote(note)),
     fetchNote: noteId => dispatch(fetchNote(noteId)),
     deleteWarning: () => dispatch(updateNoteDeleteWarning()),
-    notebookSelector: () => dispatch(updateNotebookSelector())
+    notebookSelector: () => dispatch(updateNotebookSelector()),
+    resetNotebooks: () => dispatch(fetchNotebooks())
   };
 };
 
