@@ -11,14 +11,20 @@ import NoteShow from './note_show';
 
 
 
-const NoteHome = () => {
+// const NoteHome = () => {
+class NoteHome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
 
-  return(
-    <div className='modal-holder'>
-      <CreateNotebook />
-      <DeleteWarning />
-      
-      <main className='notes-main'>
+    return(
+      <div className='modal-holder'>
+        <CreateNotebook />
+        <DeleteWarning />
+
+        <main className='notes-main'>
 
           <SideNav />
 
@@ -26,15 +32,17 @@ const NoteHome = () => {
           <Notes />
           <Notebooks />
 
-            <div className=' note-show-wrapper'>
-              <NoteShow />
-            </div>
+          <div className=' note-show-wrapper'>
+            <NoteShow />
+          </div>
 
 
-      </main>
-    </div>
-  );
-};
+        </main>
+      </div>
+    );
+  }
+}
+
 
 export default NoteHome;
 

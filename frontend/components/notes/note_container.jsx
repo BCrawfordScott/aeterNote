@@ -11,7 +11,7 @@ import {
  } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
-
+  debugger
   const note = (state.ui.selected_note) ?
     state.notes[state.ui.selected_note] :
     {
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
     };
   const notebook = state.notebooks[note.notebook_id] ?
     state.notebooks[note.notebook_id] : { title: '' };
-  const notebooks = Object.values(state.notebooks);
+  const notebooks = state.notebooks;
   const revealSelector = state.ui.notebook_selector ?
     "reveal-notebook-selector" : "hide-notebook-selector";
   return {

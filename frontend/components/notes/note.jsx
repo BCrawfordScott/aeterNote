@@ -16,12 +16,14 @@ class QuillNote extends React.Component {
     this.update = this.update.bind(this);
     this.handleEditorChange = this.handleEditorChange.bind(this);
     this.handleSaveAction = this.handleSaveAction.bind(this);
+    this.collectNotebook = this.collectNotebook.bind(this);
   }
 
 
   componentWillReceiveProps(newProps) {
-
-    this.setState({
+    // debugger
+    if(newProps.note.id !== this.props.note.id)
+    {this.setState({
       id: newProps.note.id,
       title: newProps.note.title,
       content: newProps.note.content,
@@ -32,7 +34,7 @@ class QuillNote extends React.Component {
     });
     this.setState((newProps.note.id) ?
         { saveAction: newProps.updateNote } :
-        { saveAction: newProps.createNote });
+        { saveAction: newProps.createNote });}
   }
 
   componentDidMount() {
@@ -65,7 +67,20 @@ class QuillNote extends React.Component {
 
   }
 
+  collectNotebook(notebookId) {
+    debugger
+    // console.log(notebookId);
+    this.setState({ notebook_id: notebookId }, () => {
+      debugger
+      console.log(this.state.notebook_id);
+
+    });
+    // this.forceUpdate();
+
+  }
+
   render() {
+    debugger
     return (
 
     <main className='note-new-edit'>
@@ -77,10 +92,13 @@ class QuillNote extends React.Component {
           <div className='notebook-select-modal-holder'>
             <div className='notebook-select'
               onClick={() => this.props.notebookSelector()}>
-              {this.props.notebook.title}
+              {this.props.notebooks[this.state.notebook_id].title}
               <img src={window.staticImages.downArrow}/>
             </div>
-            <NotebookSelect reveal={this.props.revealSelector} notebooks={this.props.notebooks}/>
+            <NotebookSelect
+              reveal={this.props.revealSelector}
+              notebooks={Object.values(this.props.notebooks)}
+              collectNotebook={this.collectNotebook}/>
           </div>
         </div>
         <div className='title-save'>

@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({
       session: { currentUser: window.currentUser },
       notebooks: window.notebooks,
-      ui: { current_notebook: Object.keys(window.notebooks)[0]}
+      ui: {
+        current_notebook: Object.keys(window.notebooks)[0],
+        notebook_tab: null
+      }
     });
     delete window.currentUser;
     delete window.notebooks;

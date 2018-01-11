@@ -5,7 +5,22 @@ import { updateSelectedNote } from '../../actions/ui_actions';
 
 class SideNav extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+
+    // this.handleClose = this.handleClose.bind(this);
+  }
+
+  // handleClose() {
+  //   document.getElementById('notebooks').addClass('slideleft');
+  //   setTimeout(() => this.updateNotebookTab(), 2000);
+  //
+  //
+  // }
+
   render() {
+    debugger
     return(
       <nav className='side-nav'>
         <div className='note-buttons'>

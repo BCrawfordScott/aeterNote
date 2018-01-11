@@ -20,7 +20,12 @@ class NotebookSelector extends React.Component {
             return (
               <div key={notebook.id} className='title-item'>
                 <div className="top-border"></div>
-                <li  onClick={() => this.props.notebookSelected(notebook.id)}>
+                <li  onClick={() =>{
+                  console.log(notebook.id);
+                  this.props.collectNotebook(notebook.id);
+                  // console.log(`if this has state...:${this.state.notebook_id}`);
+                  this.props.notebookSelector();
+                }}>
                   {notebook.title}
                 </li>
               </div>

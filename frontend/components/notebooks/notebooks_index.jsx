@@ -5,11 +5,11 @@ import NotebookIndexItem from './notebook_index_item';
 class NotebookIndex extends React.Component {
   constructor(props){
     super(props);
-
+    this.state = {};
   }
 
   componentWillReceiveProps(newProps) {
-    
+
   }
 
   componentDidMount() {
@@ -27,7 +27,7 @@ class NotebookIndex extends React.Component {
     const { notebookTab } = this.props;
     return(
       <div >
-        <div className={`modalbg ${revealModal}`}
+        <div className={`modalbg ${revealModal}`} id='notebooks'
           onClick={() => notebookTab() }>
           <div className={`notebooks ${reveal}` }>
 
