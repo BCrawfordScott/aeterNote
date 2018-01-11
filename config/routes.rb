@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     resources :notebooks, only: [ :index, :show, :create, :update, :destroy ]
     resources :notes, only: [ :index, :show, :create, :update, :destroy]
     resources :tags, only: [ :index, :show, :create, :update, :destroy]
+
+    post '/tags/add_tagging', to: 'tags#add_tagging'
+    delete '/remove_tagging', to: 'tags#remove_tagging'
+
   end
 end

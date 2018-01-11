@@ -1,7 +1,8 @@
 class Api::TagsController < ApplicationController
 
   before_action :require_logged_in
-  before_action :proper_ownership, except: [ :index, :create ]
+  before_action :proper_ownership, only: [:show, :update, :destroy]
+
 
   def index
     @tags = Tag.where(user_id: current_user.id)
@@ -39,12 +40,34 @@ class Api::TagsController < ApplicationController
     render :show
   end
 
+  def add_tagging
+    @tagging = Tagging.new(tagging_params)
+    if @tagging.save
+      render json: ['Tag Added'], status: 200
+    else
+      render json: @tagging.errors.full_messages, status: 422
+    end
+  end
+
+  def remove_tagging
+    @tagging = Tagging.find_by(note_id: tagging_params[:note_id], tag_id: tagging_params[:tag_id])
+    if @tagging.destroy
+      render json: ['Tag Removed'], status: 200
+    else
+      render json: @tagging.errors.full_messages, status: 422
+    end
+  end
+
 
 
 private
 
 def tag_params
   params.require(:tag).permit(:label, :user_id)
+end
+
+def tagging_params
+  params.require(:tagging).permit(:tag_id, :note_id)
 end
 
 def owns_tag?(tag)
