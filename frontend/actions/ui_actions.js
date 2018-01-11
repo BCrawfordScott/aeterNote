@@ -7,6 +7,12 @@ export const UPDATE_DELETE_WARNING = 'UPDATE_DELETE_WARNING';
 export const UPDATE_SELECTED_NOTE = 'UPDATE_SELECTED_NOTE';
 export const UPDATE_NOTE_DELETE_WARNING = 'UPDATE_NOTE_DELETE_WARNING';
 export const UPDATE_NOTEBOOK_SELECTOR = 'UPDATE_NOTEBOOK_SELECTOR';
+export const UPDATE_TAG_FORM_MODAL = 'UPDATE_TAG_FORM_MODAL';
+export const UPDATE_TAG_SELECTED = 'UPDATE_TAG_SELECTED';
+export const UPDATE_TAG_DELETE_WARNING = 'UPDATE_TAG_DELETE_WARNING';
+export const UPDATE_TAG_TAB = 'UPDATE_TAG_TAB';
+
+
 
 export const updateNotebookTab = () => {
   return {
@@ -61,5 +67,29 @@ export const updateEditNotebook = () => {
 export const updateNotebookSelector = () => {
   return {
       type: UPDATE_NOTEBOOK_SELECTOR
+  };
+};
+
+export const updateTagFormModal = () => {
+  return {
+    type: UPDATE_TAG_FORM_MODAL
+  };
+};
+
+export const updateTagSelected = () => {
+  return {
+    type: UPDATE_TAG_SELECTED
+  };
+};
+
+export const updateTagDeleteWarning = () => {
+  return {
+    type: UPDATE_TAG_DELETE_WARNING
+  };
+};
+
+export const updateTagTab = () => {
+  return {
+    type: UPDATE_TAG_TAB
   };
 };
