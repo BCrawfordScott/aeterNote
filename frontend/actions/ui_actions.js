@@ -76,9 +76,10 @@ export const updateTagFormModal = () => {
   };
 };
 
-export const updateTagSelected = () => {
+export const updateTagSelected = tagId => {
   return {
-    type: UPDATE_TAG_SELECTED
+    type: UPDATE_TAG_SELECTED,
+    tagId
   };
 };
 

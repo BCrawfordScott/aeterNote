@@ -7,7 +7,11 @@ import {
   UPDATE_DELETE_WARNING,
   UPDATE_SELECTED_NOTE,
   UPDATE_NOTE_DELETE_WARNING,
-  UPDATE_NOTEBOOK_SELECTOR
+  UPDATE_NOTEBOOK_SELECTOR,
+  UPDATE_TAG_FORM_MODAL,
+  UPDATE_TAG_SELECTED,
+  UPDATE_TAG_DELETE_WARNING,
+  UPDATE_TAG_TAB,
   } from '../actions/ui_actions';
 
 import {
@@ -72,6 +76,20 @@ const uiReducer = (state = _defaultUi, action) => {
       return Object.assign(newState, { selected_note: false });
     case(UPDATE_NOTEBOOK_SELECTOR):
       return Object.assign(newState, { notebook_selector: !(newState.notebook_selector)});
+    case(UPDATE_TAG_FORM_MODAL):
+      Object.assign(newState, { tag_form: !(newState.tag_form) });
+      if (newState.tag_selector) { Object.assign(newState, { tag_selector: false }); }
+      return newState;
+    case(UPDATE_TAG_SELECTED):
+      Object.assign(newState, { current_tag: action.tagId });
+      Object.assign(newState, { tag_selected: Boolean(newState.current_tag) });
+      Object.assign(newState, { selected_note: false });
+      if (newState.tag_selector) { Object.assign(newState, { tag_selector: false }); }
+      return newState;
+    case(UPDATE_TAG_DELETE_WARNING):
+      return Object.assign(newState, { tag_delete_warning: !(newState.tag_delete_warning) });
+    case(UPDATE_TAG_TAB):
+      return Object.assign(newState, { tag_tab: !(newState.tag_tab) });
     case(LOGOUT):
       return {};
     default:
