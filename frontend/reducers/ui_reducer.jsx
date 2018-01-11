@@ -42,7 +42,9 @@ const uiReducer = (state = _defaultUi, action) => {
   let newState = Object.assign({}, state);
   switch(action.type){
     case(UPDATE_NOTEBOOK_TAB):
-      return Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
+      Object.assign(newState, { tag_tab: false });
+      Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
+      return newState;
     case(UPDATE_NOTEBOOK_FORM_MODAL):
       Object.assign(newState, { notebook_form_modal: !(newState.notebook_form_modal) });
       if (newState.notebook_selector) { Object.assign(newState, { notebook_selector: false }); }
@@ -89,7 +91,9 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_TAG_DELETE_WARNING):
       return Object.assign(newState, { tag_delete_warning: !(newState.tag_delete_warning) });
     case(UPDATE_TAG_TAB):
-      return Object.assign(newState, { tag_tab: !(newState.tag_tab) });
+      Object.assign(newState, { tag_tab: !(newState.tag_tab) });
+      Object.assign(newState, { notebook_tab: false });
+      return newState;
     case(LOGOUT):
       return {};
     default:
