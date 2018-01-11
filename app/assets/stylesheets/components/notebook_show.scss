@@ -29,9 +29,7 @@
       cursor: pointer;
     }
 
-    .locked {
-      display: none;
-    }
+
 
     h3 {
       text-align: center;
@@ -84,4 +82,9 @@
       }
     }
   }
+}
+
+
+.locked {
+  display: none;
 }
