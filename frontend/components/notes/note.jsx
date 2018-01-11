@@ -79,15 +79,13 @@ class QuillNote extends React.Component {
 
   render() {
     let errorBox = ['note-errors'];
-    let deleteNote = ['delete-note-trash'];
     if (this.props.noteErrors.length > 0) { errorBox.push('flash'); }
-    if (!this.props.note.id) { deleteNote.push('locked'); }
     return (
 
     <main className='note-new-edit'>
       <form className='note-show'>
         <div className='action-tools'>
-          <div className='delete-note-trash'
+          <div className={`delete-note-trash ${this.props.lockDelete}`}
             onClick={() => this.props.deleteWarning()}>
           </div>
           <div className='notebook-select-modal-holder'>

@@ -15,6 +15,8 @@ import {
  } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {
+  const lockDelete = (state.ui.selected_note) ?
+    ' ' : 'locked';
   const note = (state.ui.selected_note) ?
     state.notes[state.ui.selected_note] :
     {
@@ -35,7 +37,8 @@ const mapStateToProps = state => {
     notebook: notebook,
     notebooks: notebooks,
     revealSelector: revealSelector,
-    noteErrors: noteErrors
+    noteErrors: noteErrors,
+    lockDelete: lockDelete
   };
 };
 
