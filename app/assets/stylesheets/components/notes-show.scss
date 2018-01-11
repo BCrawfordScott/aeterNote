@@ -132,3 +132,40 @@
     overflow: auto;
   }
 }
+
+.note-errors {
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  left: 800px;
+  z-index:10;
+  font-size: 18px;
+
+  li {
+    margin: auto;
+    text-align: center;
+    color: $EvernoteErrorRed;
+    width: 300px;
+    background-color: $EvernoteErrorPink;
+    padding: 0px 15px 10px 15px;
+    border-left: 1px solid $EvernoteErrorRed;
+    border-right: 1px solid $EvernoteErrorRed;
+    border-radius: 5px;
+  }
+
+  li:first-of-type {
+    padding-top: 10px;
+    border-top: 1px solid $EvernoteErrorRed;
+  }
+
+  li:last-of-type {
+    border-bottom: 1px solid $EvernoteErrorRed;
+  }
+
+}
+
+.flash {
+  animation: flash 5s;
+  transition: visibility 5s;
+  visibility: hidden;
+}

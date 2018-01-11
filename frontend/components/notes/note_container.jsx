@@ -29,11 +29,13 @@ const mapStateToProps = state => {
   const notebooks = state.notebooks;
   const revealSelector = state.ui.notebook_selector ?
     "reveal-notebook-selector" : "hide-notebook-selector";
+  const noteErrors = state.errors.notes;
   return {
     note: note,
     notebook: notebook,
     notebooks: notebooks,
-    revealSelector: revealSelector
+    revealSelector: revealSelector,
+    noteErrors: noteErrors
   };
 };
 

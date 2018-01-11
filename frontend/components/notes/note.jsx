@@ -10,7 +10,7 @@ class QuillNote extends React.Component {
     merge(this.state, {
       saveAction: (this.props.note.id) ?
           this.props.updateNote : this.props.createNote,
-      notebook_id: this.props.note.notebook_id
+      notebook_id: (this.props.note.notebook_id)
     });
 
     this.update = this.update.bind(this);
@@ -78,7 +78,8 @@ class QuillNote extends React.Component {
   }
 
   render() {
-
+    let errorBox = ['note-errors'];
+    if (this.props.noteErrors.length > 0) { errorBox.push('flash'); }
     return (
 
     <main className='note-new-edit'>
@@ -90,7 +91,9 @@ class QuillNote extends React.Component {
           <div className='notebook-select-modal-holder'>
             <div className='notebook-select'
               onClick={() => this.props.notebookSelector()}>
-              {this.props.notebooks[this.state.notebook_id].title}
+              {(this.props.notebooks[this.state.notebook_id]) ?
+                this.props.notebooks[this.state.notebook_id].title :
+                ''}
               <img src={window.staticImages.downArrow}/>
             </div>
             <NotebookSelect
@@ -100,6 +103,13 @@ class QuillNote extends React.Component {
           </div>
         </div>
         <div className='title-save'>
+          <ul className={errorBox.join(' ')}>
+            {
+              this.props.noteErrors.map((error, i) => (
+                <li key={i}>{error}</li>
+              ))
+            }
+          </ul>
           <input className='note-title-edit'
             type='text'
             value={this.state.title}

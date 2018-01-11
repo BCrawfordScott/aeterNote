@@ -64,3 +64,17 @@ $sans-serif: 'Raleway', sans-serif;
     left: -500px;
   }
 }
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1.0
+  }
+
+  100% {
+    opacity: 0;
+  }
+  
+}
