@@ -3,6 +3,7 @@ import TagIndexItem from './tags_index_item';
 
 
 
+
 class TagsIndex extends React.Component {
   constructor(props){
     super(props);
@@ -32,6 +33,7 @@ class TagsIndex extends React.Component {
       <div >
         <div className={`tagmodalbg ${revealModal}`} id='tags'
           onClick={() => tagTab() }>
+
           <div className={`tags ${reveal}` }>
 
             <header>

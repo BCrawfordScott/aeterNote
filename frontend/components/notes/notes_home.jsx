@@ -9,6 +9,7 @@ import Notebooks from '../notebooks/notebooks_index_container';
 import NoteShow from './note_show';
 import Tags from '../tags/tags_index_container';
 import CreateTag from '../tags/create_tag_form_container';
+import TagDeleteWarning from '../tags/tag_delete_warning';
 
 // import ReactQuill from 'react-quill';
 
@@ -27,6 +28,7 @@ class NoteHome extends React.Component {
         <CreateNotebook />
         <DeleteWarning />
         <CreateTag />
+        <TagDeleteWarning />
 
         <main className='notes-main'>
 

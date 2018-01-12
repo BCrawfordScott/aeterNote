@@ -8,7 +8,7 @@ import DeleteWarning from '../notebooks/notebook_delete_warning';
 import NoteShow from '../notes/note_show';
 import Tags from '../tags/tags_index_container';
 import CreateTag from '../tags/create_tag_form_container';
-
+import TagDeleteWarning from '../tags/tag_delete_warning';
 
 
 const NoteBookHome = () => {
@@ -18,6 +18,7 @@ const NoteBookHome = () => {
       <CreateNotebook />
       <DeleteWarning />
       <CreateTag />
+      <TagDeleteWarning />
       <main className='notes-main'>
 
           <SideNav />

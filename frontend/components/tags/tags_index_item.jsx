@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
-  updateSelectedTag,
+  updateTagSelected,
   updateTagDeleteWarning
 } from '../../actions/ui_actions';
 
@@ -21,7 +21,7 @@ class TagIndexItem extends React.Component {
         <li className='tag-item'
             onClick={() => {
               this.props.selectTag(tagId);
-              this.props.history.push('/tag');
+              // this.props.history.push('/tag');
             } }>
           <div className='tag-description'>
             <h5 className='tag-label'>
@@ -31,7 +31,10 @@ class TagIndexItem extends React.Component {
           </div>
           <div className='tag-item-buttons'>
             <button className='button-tag'
-              onClick={() => this.props.deleteWarning()}>
+              onClick={() => {
+                this.props.selectTag(tagId);
+                this.props.deleteWarning();}
+              }>
               <div className='button-tag' />
             </button>
           </div>
@@ -45,7 +48,7 @@ class TagIndexItem extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateSelectedTag: tagId => dispatch(updateSelectedTag(tagId)),
+    selectTag: tagId => dispatch(updateTagSelected(tagId)),
     deleteWarning: () => dispatch(updateTagDeleteWarning())
   };
 };

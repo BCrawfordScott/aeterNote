@@ -12,6 +12,13 @@
   display: none;
 }
 
+.hide-tag-delete-warning {
+  display: none;
+}
+
+.reveal-tag-delete-warning {
+  z-index: 15;
+}
 .reveal-note-delete-warning {
   z-index: 15;
 }
