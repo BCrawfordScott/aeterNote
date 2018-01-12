@@ -46,14 +46,14 @@ export const removeTagErrors = () => {
 
 const receiveTagging = tagging => {
   return {
-    type: RECEIVE_TAGS,
+    type: RECEIVE_TAGGING,
     tagging
   };
 };
 
 const removeTagging = tagging => {
   return {
-    type: RECEIVE_TAGS,
+    type: REMOVE_TAGGING,
     tagging
   };
 };
