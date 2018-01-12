@@ -217,6 +217,7 @@
     transition: all .4s;
     background-color: $EvernoteHoverGreen;
     border-color: $EvernoteHoverGreen;
+    cursor: pointer;
   }
 
   .untagged:hover {
@@ -224,5 +225,6 @@
     background-color: $EvernoteGreen;
     border-color: $EvernoteGreen;
     color: #fff;
+    cursor: pointer;
   }
 }

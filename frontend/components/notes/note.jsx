@@ -39,6 +39,13 @@ class QuillNote extends React.Component {
     this.setState((newProps.note.id) ?
         { saveAction: newProps.updateNote } :
         { saveAction: newProps.createNote });}
+    if(newProps.taggings !== this.props.taggings) {
+      this.setState(
+        {
+          tags: newProps.tags,
+          taggins: newProps.taggings
+        });
+    }
   }
 
   componentDidMount() {
