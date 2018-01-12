@@ -10,7 +10,7 @@ Welcome to [æterNote](https://aeternote.herokuapp.com/), a single-page clone of
 ### User Authentication
 Users can securely sign up, log in, and log out simply by setting an email address and password for their account.
 
-*sessionimage*
+![user auth](https://github.com/BCrawfordScott/aeterNote/blob/master/%C3%A6terNote_readme_images%20/session_forms.png)
 
 ### Structure
 æterNote's main components are as follows:
@@ -30,7 +30,7 @@ Users can securely sign up, log in, and log out simply by setting an email addre
 ### Rich Text Editing
 æterNote implements React-Quill, a react component version of the popular Quill.js
 
-*texteditorimage*
+![text-editor](https://github.com/BCrawfordScott/aeterNote/blob/master/%C3%A6terNote_readme_images%20/text_editor.png)
 
 The editor serves as both a create and/or an update form for notes.  It gives the user the ability to assign and re-assign the current note to notebooks, and assign tags to the current note.
 
@@ -41,7 +41,8 @@ Tags are listed as clickable buttons in a list at the top of the editor.
 ### Easy UI
 React and redux architecture provide a simple and intuitive interface.  The UI id present and recognizable throughout the entire application and gives users the ability to navigate to any organizational component from any other organizational component.
 
-*uiimgages*
+![ui-tags](https://github.com/BCrawfordScott/aeterNote/blob/master/%C3%A6terNote_readme_images%20/tag-index.png)
+![ui-new-notebook](https://github.com/BCrawfordScott/aeterNote/blob/master/%C3%A6terNote_readme_images%20/create_notebook.png)
 
 #### Future Features
 
