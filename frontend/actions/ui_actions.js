@@ -11,6 +11,7 @@ export const UPDATE_TAG_FORM_MODAL = 'UPDATE_TAG_FORM_MODAL';
 export const UPDATE_TAG_SELECTED = 'UPDATE_TAG_SELECTED';
 export const UPDATE_TAG_DELETE_WARNING = 'UPDATE_TAG_DELETE_WARNING';
 export const UPDATE_TAG_TAB = 'UPDATE_TAG_TAB';
+export const CLOSE_TABS = 'CLOSE_TABS';
 
 
 
@@ -92,5 +93,11 @@ export const updateTagDeleteWarning = () => {
 export const updateTagTab = () => {
   return {
     type: UPDATE_TAG_TAB
+  };
+};
+
+export const closeTabs = () => {
+  return {
+    type: CLOSE_TABS
   };
 };

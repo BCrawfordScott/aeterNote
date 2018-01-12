@@ -3,7 +3,8 @@ import { logout } from '../../actions/session_actions';
 import {
   updateNotebookTab,
   updateTagTab,
-  updateSelectedNote
+  updateSelectedNote,
+  closeTabs
 } from '../../actions/ui_actions';
 
 import SideNav from './side_nav';
@@ -13,7 +14,8 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     updateNotebookTab: () => dispatch(updateNotebookTab()),
     updateTagTab: () => dispatch(updateTagTab()),
-    newNote: () => dispatch(updateSelectedNote(false))
+    newNote: () => dispatch(updateSelectedNote(false)),
+    closeTabs: () => dispatch(closeTabs())
   };
 };
 

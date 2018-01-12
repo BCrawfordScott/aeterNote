@@ -23,7 +23,7 @@ class SideNav extends React.Component {
     return(
       <nav className='side-nav'>
         <div className='nav-logo'>
-          
+
         </div>
         <div className='note-buttons'>
           <div className='side-nav-button note-new-button'
@@ -36,7 +36,10 @@ class SideNav extends React.Component {
             onClick={() => this.props.updateNotebookTab()}>
           </div>
           <div className='side-nav-button note-index-button'
-            onClick={() => this.props.history.push('/notes')}>
+            onClick={() => {
+              this.props.closeTabs();
+              this.props.history.push('/notes');
+            }}>
           </div>
           <div className='side-nav-button tag-index-button'
             onClick={() => this.props.updateTagTab()}>

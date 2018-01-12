@@ -78,6 +78,23 @@ class QuillNote extends React.Component {
   }
 
   render() {
+
+    const toolbar = [
+      [{ 'font': [] }],
+      ['italic', 'underline', 'strike'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'script': 'sub'}, { 'script': 'super' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      [{ 'direction': 'rtl' }],
+
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'align': [] }],
+
+      ['clean']
+    ];
     let errorBox = ['note-errors'];
     if (this.props.noteErrors.length > 0) { errorBox.push('flash'); }
     return (
@@ -125,6 +142,7 @@ class QuillNote extends React.Component {
         </div>
       </form>
         <ReactQuill
+          modules={{toolbar}}
           value={this.state.content}
           ref={ editor => { this.editor = editor; }}
           onChange={this.handleEditorChange}

@@ -12,6 +12,7 @@ import {
   UPDATE_TAG_SELECTED,
   UPDATE_TAG_DELETE_WARNING,
   UPDATE_TAG_TAB,
+  CLOSE_TABS
   } from '../actions/ui_actions';
 
 import {
@@ -66,9 +67,13 @@ const uiReducer = (state = _defaultUi, action) => {
       Object.assign(newState, { edit_notebook: false });
       return newState;
     case(UPDATE_SELECTED_NOTE):
-      return Object.assign(newState, { selected_note: action.noteId });
+      Object.assign(newState, { selected_note: action.noteId });
+      return newState;
     case(RECEIVE_NOTE):
-      return Object.assign(newState, { selected_note: action.note.id });
+      Object.assign(newState, { notebook_tab: false });
+      Object.assign(newState, { tag_tab: false });
+      Object.assign(newState, { selected_note: action.note.id });
+      return newState;
     case(REMOVE_NOTEBOOK):
       Object.assign(newState, { notebook_tab: !(newState.notebook_tab) });
       Object.assign(newState, { current_notebook: false });
@@ -96,6 +101,10 @@ const uiReducer = (state = _defaultUi, action) => {
     case(UPDATE_TAG_TAB):
       Object.assign(newState, { tag_tab: !(newState.tag_tab) });
       Object.assign(newState, { notebook_tab: false });
+      return newState;
+    case(CLOSE_TABS):
+      Object.assign(newState, { notebook_tab: false });
+      Object.assign(newState, { tag_tab: false });
       return newState;
     case(LOGOUT):
       return {};
