@@ -14,8 +14,8 @@ class TagIndexItem extends React.Component {
   }
 
   render(){
-    const tagId = this.props.id;
-    const noteCount = this.props.noteIds.length;
+    const tagId = this.props.tag.id;
+    const taggingCount = this.props.tag.note_ids.length;
     return(
       <div className= 'tag-item-container'>
         <li className='tag-item'
@@ -23,20 +23,21 @@ class TagIndexItem extends React.Component {
               this.props.selectTag(tagId);
               this.props.history.push('/tag');
             } }>
+          <div className='tag-description'>
+            <h5 className='tag-label'>
+              {this.props.tag.label}
+            </h5>
+            <p className='tag-count'>{`${taggingCount}`}</p>
+          </div>
+          <div className='tag-item-buttons'>
+            <button className='button-tag'
+              onClick={() => this.props.deleteWarning()}>
+              <div className='button-tag' />
+            </button>
+          </div>
 
-          <h5>
-            {this.props.title}
-            <div className='tag-item-buttons'>
-              <button className='button-tag'
-                onClick={() => this.props.deleteWarning()}>
-                <img src={window.staticImages.whiteTrashCan} />
-              </button>
-            </div>
-          </h5>
-
-          <p>{`${noteCount} notes`}</p>
         </li>
-        <div className='bottom-border'></div>
+
       </div>
     );
   }

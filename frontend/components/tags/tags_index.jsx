@@ -27,6 +27,7 @@ class TagsIndex extends React.Component {
     const { deleteWarning } = this.props;
     const { tagTab } = this.props;
 
+
     return (
       <div >
         <div className={`tagmodalbg ${revealModal}`} id='tags'
@@ -35,8 +36,8 @@ class TagsIndex extends React.Component {
 
             <header>
               <h3>TAGS</h3>
-              <button >
-                <img src={window.staticImages.notebookPlus}/>
+              <button onClick={ () => updateTagFormModal() }>
+                <img src={window.staticImages.grayTagPlus}/>
               </button>
             </header>
 
@@ -44,7 +45,7 @@ class TagsIndex extends React.Component {
                 {tags.map(tag => {
                   return <TagIndexItem
                             key={tag.id}
-                            tag={tag} />;
+                            tag={tag}/>;
                 })}
               </ul>
             </div>

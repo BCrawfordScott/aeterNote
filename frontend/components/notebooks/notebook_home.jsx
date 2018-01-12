@@ -7,6 +7,7 @@ import NotebookShow from '../notebooks/notebook_show_container';
 import DeleteWarning from '../notebooks/notebook_delete_warning';
 import NoteShow from '../notes/note_show';
 import Tags from '../tags/tags_index_container';
+import CreateTag from '../tags/create_tag_form_container';
 
 
 
@@ -16,6 +17,7 @@ const NoteBookHome = () => {
     <div className='modal-holder'>
       <CreateNotebook />
       <DeleteWarning />
+      <CreateTag />
       <main className='notes-main'>
 
           <SideNav />
