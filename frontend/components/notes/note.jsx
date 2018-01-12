@@ -30,7 +30,11 @@ class QuillNote extends React.Component {
       plain_text: newProps.note.plain_text,
       notebook_id: newProps.note.notebook_id,
       notebook: newProps.notebook,
-      notebooks: newProps.notebooks
+      notebooks: newProps.notebooks,
+      tag_ids: newProps.note.tag_ids,
+      tags: newProps.tags,
+      taggings: newProps.taggings
+
     });
     this.setState((newProps.note.id) ?
         { saveAction: newProps.updateNote } :
@@ -78,7 +82,8 @@ class QuillNote extends React.Component {
   }
 
   render() {
-
+    const { tags } = this.props;
+    const { tag_ids } = this.props;
     const toolbar = [
       [{ 'font': [] }],
       ['italic', 'underline', 'strike'],
@@ -117,6 +122,25 @@ class QuillNote extends React.Component {
               reveal={this.props.revealSelector}
               notebooks={Object.values(this.props.notebooks)}
               collectNotebook={this.collectNotebook}/>
+          </div>
+          <div className='tags-taggings'>
+            <p className='tag-list-label'>TAGS:</p>
+            <ul className='tags-list'>
+                { tags.map(tag => {
+                   return this.state.tag_ids.includes(tag.id) ?
+                    <li className='tagged'
+                        key={tag.id}
+                        onClick={() => this.props.deleteTagging({ note_id: this.state.id, tag_id: tag.id })
+                        }
+                        >{tag.label}</li> :
+                    <li className='untagged'
+                        key={tag.id}
+                        onClick={() => this.props.addTagging({ note_id: this.state.id, tag_id: tag.id })
+                        }
+                        >{tag.label}</li>;
+                })
+              }
+            </ul>
           </div>
         </div>
         <div className='title-save'>

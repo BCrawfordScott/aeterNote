@@ -170,3 +170,59 @@
   transition: visibility 5s;
   visibility: hidden;
 }
+
+.tags-taggings {
+  display: flex;
+  align-content: center;
+  align-items: center;
+
+  .tag-list-label {
+    display: inline;
+    font-size: 18px;
+    color: $EvernoteElephantGray;
+    margin: 0 10px 0 35px;
+  }
+}
+
+.tags-list {
+  display: flex;
+  width: 200px;
+  overflow-x: auto;
+  border: 2px solid $EvernoteMediumLightGray;
+  border-radius: 3px;
+  padding: 5px 10px;
+
+  .tagged {
+    font-size: 10px;
+    font-family: $sans-serif;
+    color: #fff;
+    background-color: $EvernoteGreen;
+    border: 1px solid $EvernoteGreen;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin: 0 5px;
+  }
+  .untagged {
+    font-size: 10px;
+    font-family: $sans-serif;
+    color: $EvernoteElephantGray;
+    background-color: $EvernoteMediumLightGray;
+    border: 1px solid $EvernoteElephantGray;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin: 0 5px;
+  }
+
+  .tagged:hover {
+    transition: all .4s;
+    background-color: $EvernoteHoverGreen;
+    border-color: $EvernoteHoverGreen;
+  }
+
+  .untagged:hover {
+    transition: all .4s;
+    background-color: $EvernoteGreen;
+    border-color: $EvernoteGreen;
+    color: #fff;
+  }
+}
