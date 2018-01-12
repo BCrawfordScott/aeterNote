@@ -33,8 +33,20 @@
     border-color: $EvernoteGreen;
   }
 
-  .note-buttons {
+  .nav-logo {
+    height: 65px;
+    width: 65px;
+    background: image_url('aeterNote_logo_lightbulb.png');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+  }
 
+  .note-buttons {
+    margin-top: 45px;
     .notebooks-button {
       height: 35px;
       width: 35px;
@@ -50,6 +62,7 @@
 
     .notebooks-button:hover {
       cursor: pointer;
+
     }
 
 
@@ -107,6 +120,11 @@
     .side-nav-button {
       margin-top: 10px;
       margin-bottom: 10px;
+    }
+
+    .side-nav-button:hover {
+      transition: border-color .4s;
+      border-color: $EvernoteGreen;
     }
   }
 

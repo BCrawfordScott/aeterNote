@@ -22,6 +22,9 @@ class SideNav extends React.Component {
   render() {
     return(
       <nav className='side-nav'>
+        <div className='nav-logo'>
+          
+        </div>
         <div className='note-buttons'>
           <div className='side-nav-button note-new-button'
             onClick={() => {
