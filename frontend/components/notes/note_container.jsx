@@ -63,7 +63,7 @@ const mapDispatchToProps = (dispatch) => {
     resetNotebooks: () => dispatch(fetchNotebooks()),
     deleteTagging: (tagging) => dispatch(deleteTagging(tagging)),
     addTagging: (tagging) => dispatch(addTagging(tagging)),
-    fetchTags: () => dispatch(fetchTags())
+    resetTags: () => dispatch(fetchTags())
   };
 };
 

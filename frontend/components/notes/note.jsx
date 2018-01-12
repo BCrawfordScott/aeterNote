@@ -68,7 +68,10 @@ class QuillNote extends React.Component {
       notebook_id: this.state.notebook_id,
     };
     this.state.saveAction(note).then(
-      () => this.props.resetNotebooks()
+      () => {
+        this.props.resetNotebooks();
+        this.props.resetTags();
+      }
     );
 
   }
