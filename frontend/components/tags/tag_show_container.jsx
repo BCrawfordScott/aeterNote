@@ -6,7 +6,6 @@ import {
 } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
-  debugger
   const revealShow = (state.ui.current_tag) ? "reveal-tag-show" : "hide-tag-show";
   const revealSort = (state.ui.sort_options) ? "reveal-sort" : "hide-sort";
   const tag = (state.tags[state.ui.current_tag]) ?

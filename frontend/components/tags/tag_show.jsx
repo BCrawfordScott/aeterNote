@@ -27,8 +27,8 @@ class TagShow extends React.Component {
       <div className={`${this.props.revealShow}`}>
 
       <div className={`notebook-show tag-show`} >
-        <header className='notebook-header'>
-          <h3 className='notebook-title'>TAG: {tag.label}</h3>
+        <header className='notebook-header tag-header'>
+          <h3 className='notebook-title' id='tag-label'>TAG: {tag.label}</h3>
         </header>
         <div className='note-info'>
           <div className='count-options'>
@@ -38,8 +38,8 @@ class TagShow extends React.Component {
             <SortOptions reveal={this.props.revealSort}/>
             </div>
           </div>
-          <div className='notes-index'>
-            <ul className='notes-ul notebook-show-notes'>
+          <div className='notes-index' id='tag-notes'>
+            <ul className='notes-ul notebook-show-notes' >
               {
                 notes.map(note => {
                   if(note)
