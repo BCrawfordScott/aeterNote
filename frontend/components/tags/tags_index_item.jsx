@@ -21,7 +21,7 @@ class TagIndexItem extends React.Component {
         <li className='tag-item'
             onClick={() => {
               this.props.selectTag(tagId);
-              // this.props.history.push('/tag');
+              this.props.history.push('/tags');
             } }>
           <div className='tag-description'>
             <h5 className='tag-label'>
@@ -49,7 +49,7 @@ class TagIndexItem extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     selectTag: tagId => dispatch(updateTagSelected(tagId)),
-    deleteWarning: () => dispatch(updateTagDeleteWarning())
+    deleteWarning: () => dispatch(updateTagDeleteWarning()),
   };
 };
 
