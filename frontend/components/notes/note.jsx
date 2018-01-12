@@ -130,12 +130,16 @@ class QuillNote extends React.Component {
                    return this.state.tag_ids.includes(tag.id) ?
                     <li className='tagged'
                         key={tag.id}
-                        onClick={() => this.props.deleteTagging({ note_id: this.state.id, tag_id: tag.id })
+                        onClick={() => this.props.deleteTagging({ note_id: this.state.id, tag_id: tag.id }).then(
+                          () => this.handleSaveAction()
+                        )
                         }
                         >{tag.label}</li> :
                     <li className='untagged'
                         key={tag.id}
-                        onClick={() => this.props.addTagging({ note_id: this.state.id, tag_id: tag.id })
+                        onClick={() => this.props.addTagging({ note_id: this.state.id, tag_id: tag.id }).then(
+                          () => this.handleSaveAction()
+                        )
                         }
                         >{tag.label}</li>;
                 })

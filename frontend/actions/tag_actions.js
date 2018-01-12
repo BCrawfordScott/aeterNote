@@ -108,14 +108,14 @@ export const deleteTag = tagId => dispatch => {
 
 export const addTagging = tagging => dispatch => {
   return APIUtil.addTagging(tagging).then(
-    newTagging => dispatch(receiveTagging(newTagging.responseJSON)),
+    newTagging => dispatch(receiveTagging(newTagging)),
     errors => dispatch(receiveTaggingErrors(errors.responseJSON))
   );
 };
 
 export const deleteTagging = tagging => dispatch => {
   return APIUtil.deleteTagging(tagging).then(
-    newTagging => dispatch(receiveTagging(newTagging.responseJSON)),
+    newTagging => dispatch(receiveTagging(newTagging)),
     errors => dispatch(receiveTaggingErrors(errors.responseJSON))
   );
 };
