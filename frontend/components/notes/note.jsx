@@ -2,6 +2,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import { merge } from 'lodash';
 import NotebookSelect from './notebook_selector';
+import NoteTagsList from './note_tags_list';
 
 class QuillNote extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class QuillNote extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    //
+    console.log(newProps);
     if(newProps.note.id !== this.props.note.id)
     {this.setState({
       id: newProps.note.id,
@@ -133,29 +134,7 @@ class QuillNote extends React.Component {
               notebooks={Object.values(this.props.notebooks)}
               collectNotebook={this.collectNotebook}/>
           </div>
-          <div className='tags-taggings'>
-            <p className='tag-list-label'>TAGS:</p>
-            <ul className='tags-list'>
-                { tags.map(tag => {
-                   return this.state.tag_ids.includes(tag.id) ?
-                    <li className='tagged'
-                        key={tag.id}
-                        onClick={() => this.props.deleteTagging({ note_id: this.state.id, tag_id: tag.id }).then(
-                          () => this.handleSaveAction()
-                        )
-                        }
-                        >{tag.label}</li> :
-                    <li className='untagged'
-                        key={tag.id}
-                        onClick={() => this.props.addTagging({ note_id: this.state.id, tag_id: tag.id }).then(
-                          () => this.handleSaveAction()
-                        )
-                        }
-                        >{tag.label}</li>;
-                })
-              }
-            </ul>
-          </div>
+          <NoteTagsList />
         </div>
         <div className='title-save'>
           <ul className={errorBox.join(' ')}>

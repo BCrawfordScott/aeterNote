@@ -15,9 +15,9 @@ const taggingsReducer = (state = [], action) => {
     case(REMOVE_TAGGING_ERRORS):
       return [];
     case(RECEIVE_TAGGING):
-      return action.tagging;
+      return action.tagging.tag_message;
     case(REMOVE_TAGGING):
-      return action.tagging;
+      return action.tagging.tag_message;
     case(LOGOUT):
       return [];
     default:

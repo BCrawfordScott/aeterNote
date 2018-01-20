@@ -43,7 +43,9 @@ class Api::TagsController < ApplicationController
   def add_tagging
     @tagging = Tagging.new(tagging_params)
     if @tagging.save
-      render json: ['Tag Added']
+      @tags = Tag.where(user_id: current_user.id)
+      @tag_message = ['Tag Added']
+      render :tagging
     else
       render json: @tagging.errors.full_messages, status: 422
     end
@@ -52,7 +54,9 @@ class Api::TagsController < ApplicationController
   def remove_tagging
     @tagging = Tagging.find_by(note_id: tagging_params[:note_id], tag_id: tagging_params[:tag_id])
     if @tagging.destroy
-      render json: ['TagRemoved']
+      @tags = Tag.where(user_id: current_user.id)
+      @tag_message = ['TagRemoved']
+      render :tagging
     else
       render json: @tagging.errors.full_messages, status: 422
     end

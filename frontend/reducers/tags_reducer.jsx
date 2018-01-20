@@ -2,7 +2,9 @@
 import {
   RECEIVE_TAG,
   RECEIVE_TAGS,
-  REMOVE_TAG
+  REMOVE_TAG,
+  REMOVE_TAGGING,
+  RECEIVE_TAGGING
 } from '../actions/tag_actions';
 import { LOGOUT } from '../actions/session_actions';
 
@@ -17,6 +19,9 @@ const tagsReducer = (state = {}, action) => {
     case(REMOVE_TAG):
       delete newState[action.tagId];
       return newState;
+    case(REMOVE_TAGGING):
+    case(RECEIVE_TAGGING):
+      return action.tagging.tags;
     case(LOGOUT):
       return {};
     default:
